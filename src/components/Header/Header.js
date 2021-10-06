@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./Header.css"
 import logo from "../../assets/icons/logo.png"
 import login from "../../assets/icons/login.png"
+import { NavLink } from "react-router-dom"
 
 const Header = () => {
   const date = new Date()
@@ -16,19 +17,19 @@ const Header = () => {
 
   return (
     <div className={"header"}>
-      <h1 className={"header__title"}>
+      <NavLink to="/" className={"header__title"}>
         <img src={logo} alt='logo bike park' />{" "}
-      </h1>
+      </NavLink>
       <div className={"header__links"}>
         <div className={"header__links-item"}>О нас</div>
         <div className={"header__links-item"}>Аренда</div>
         <div className={"header__links-item"}>Доставка</div>
         <div className={"header__links-item"}>Где кататься</div>
         <div className={"header__links-item"}>Контакты</div>
-      </div> 
-      <div className={"header__authLinks"}>
-        <img src={login} alt='login' />
       </div>
+      <NavLink to='/auth' className={"header__authLinks"}>
+        <img src={login} alt='login' />
+      </NavLink>
       <div className={"header__feedback"}>Обратная свзяь</div>
       <div className={"header__date"}>
         {changeTime.getHours() < 10
