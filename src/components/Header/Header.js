@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./Header.css"
-import logo from "../../assets/icons/logo.png"
-import login from "../../assets/icons/login.png"
+import logo from "../../assets/icons/logo.svg"
+import login from "../../assets/icons/user.svg"
 import { NavLink } from "react-router-dom"
 
 const Header = () => {
@@ -14,23 +14,32 @@ const Header = () => {
       setChangeTime(new Date())
     }, milliseconds)
   }, [changeTime])
-
+  const links = [
+    { href: "/aboutus", text: "О нас" },
+    { href: "/rent", text: "Аренда" },
+    { href: "/delivery", text: "Доставка" },
+    { href: "/info", text: "Где кататься" },
+    { href: "/contacts", text: "Контакты" },
+  ]
   return (
     <div className={"header"}>
-      <NavLink to="/" className={"header__title"}>
+      <NavLink to='/' className={"header__title"}>
         <img src={logo} alt='logo bike park' />{" "}
       </NavLink>
-      <div className={"header__links"}>
-        <div className={"header__links-item"}>О нас</div>
-        <div className={"header__links-item"}>Аренда</div>
-        <div className={"header__links-item"}>Доставка</div>
-        <div className={"header__links-item"}>Где кататься</div>
-        <div className={"header__links-item"}>Контакты</div>
+      <div className='header__links'>
+        {links.map(item => (
+          <NavLink
+            activeClassName='header__links-item-active'
+            to={item.href}
+            className='header__links-item'
+          >
+            {item.text}
+          </NavLink>
+        ))}
       </div>
       <NavLink to='/auth' className={"header__authLinks"}>
         <img src={login} alt='login' />
       </NavLink>
-      <div className={"header__feedback"}>Обратная свзяь</div>
       <div className={"header__date"}>
         {changeTime.getHours() < 10
           ? `0${changeTime.getHours()}`

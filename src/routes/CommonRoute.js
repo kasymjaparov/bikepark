@@ -1,25 +1,18 @@
-import React from "react"
+import { Route, Redirect, Switch } from "react-router-dom"
 import Main from "../pages/Main/Main"
 import Auth from "../pages/Auth/Auth"
-import { Route, Redirect, Switch } from "react-router-dom"
+import Delivery from "../pages/Delivery/Delivery"
+import Info from "../pages/Info/Info"
+import Contacts from "../pages/Contacts/Contacts"
 
 export default function CommonRoute() {
-  // const commonRoutes = [
-  //   { path: "/", component: Main },
-  //   { path: "/auth", component: Auth },
-  // ]
   return (
     <Switch>
-      {/* {commonRoutes.map(item => (
-        <Route
-          key={item.path}
-          path={item.path}
-          component={item.component}
-          exact={true}
-        />
-      ))} */}
       <Route path='/' component={Main} exact={true} />
       <Route path='/auth' component={Auth} />
+      <Route path='/delivery' component={Delivery} />
+      <Route path='/info' component={Info} />
+      <Route path='/contacts' component={Contacts} />
       <Redirect to='/auth' />
     </Switch>
   )

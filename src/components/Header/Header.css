@@ -23,6 +23,14 @@
 
 .header__links-item {
   margin-left: 19px;
+  text-decoration: none;
+  color: inherit;
+}
+.header__links-item:hover {
+  color: #297fff;
+}
+.header__links-item-active {
+  color: #297fff;
 }
 
 .header__date {
@@ -44,18 +52,4 @@
   margin: 0 5px;
   height: 16px;
   background-color: #000000;
-}
-
-.header__feedback {
-  border-radius: 10px;
-  margin-left: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  line-height: 17px;
-  background: #297fff;
-  height: 40px;
-  width: 200px;
-  color: white;
 }
