@@ -6,7 +6,9 @@
   justify-content: space-between;
   height: 65px;
 }
-
+nav {
+  display: flex;
+}
 .header__title {
   font-weight: bold;
   font-size: 23px;
@@ -46,10 +48,107 @@
   align-items: center;
   margin-left: 20px;
 }
-
+.header__authLinks span {
+  display: none;
+}
 .header__authLinks-line {
   width: 1px;
   margin: 0 5px;
   height: 16px;
   background-color: #000000;
+}
+.burger {
+  width: 30px;
+  cursor: pointer;
+  display: none;
+}
+.burger_item:nth-child(1) {
+  margin-top: 0;
+}
+.burger_item {
+  width: 100%;
+  border-radius: 2px;
+  height: 3px;
+  background: #000;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+@media (max-width: 960px) {
+  .header__links {
+    margin: 0px 0px 0px 0px;
+  }
+}
+@media (max-width: 821px) {
+  .header__links-item {
+    font-size: 14px;
+  }
+  .header__date {
+    margin-left: 0px;
+    font-size: 24px;
+  }
+  .header__authLinks {
+    margin-left: 10px;
+    width: 34px;
+    height: 34px;
+  }
+  .header__authLinks img {
+    width: 100%;
+  }
+}
+@media (max-width: 650px) {
+  .burger {
+    display: block;
+    margin: 0px 0px 0px 16px;
+  }
+  .burger-open div:nth-of-type(2) {
+    opacity: 0;
+  }
+  .burger-open div:first-of-type {
+    transform: rotate(45deg);
+    margin-bottom: -16px;
+  }
+  .burger-open div:nth-of-type(3) {
+    transform: rotate(-45deg);
+  }
+  nav {
+    position: absolute;
+    left: 0;
+    top: 75px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 75px);
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    padding: 90px 0px 0px 0px;
+  }
+  nav .header__links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .header_date_burger {
+    display: flex;
+    align-items: center;
+  }
+  .header__links-item {
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 38px;
+    margin-left: 15px;
+  }
+  .header__authLinks {
+    margin-left: 15px;
+    text-decoration: none;
+    width: auto;
+    height: auto;
+  }
+  .header__authLinks span {
+    display: inline;
+    font-size: 18px;
+    color: #297fff;
+  }
+  .header__authLinks img {
+    display: none;
+  }
 }

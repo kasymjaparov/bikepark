@@ -36,7 +36,7 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: #F2F4F7;
+  background: #f2f4f7;
 }
 input,
 button,
@@ -75,24 +75,24 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
-.container {
+.mycontainer {
   width: 1200px;
   margin: 0 auto 0 auto;
 }
 @media (max-width: 1380px) {
-  .container {
+  .mycontainer {
     max-width: 100%;
     padding: 0 50px;
   }
 }
 @media (max-width: 768px) {
-  .container {
+  .mycontainer {
     max-width: 100%;
     padding: 0 15px;
   }
 }
 @media (max-width: 500px) {
-  .container {
+  .mycontainer {
     max-width: 100%;
     padding: 0 10px;
   }
