@@ -8,6 +8,13 @@ const Header = () => {
   const date = new Date()
   const seconds = date.getSeconds()
   const milliseconds = (60 - seconds) * 1000
+  const links = [
+    { href: "/aboutus", text: "О нас" },
+    { href: "/rent", text: "Аренда" },
+    { href: "/delivery", text: "Доставка" },
+    { href: "/info", text: "Где кататься" },
+    { href: "/contacts", text: "Контакты" },
+  ]
   const [changeTime, setChangeTime] = useState(date)
   useEffect(() => {
     setTimeout(() => {
@@ -20,21 +27,6 @@ const Header = () => {
       setShow(false)
     }
   }, [])
-  React.useEffect(() => {
-    if (show) {
-      document.querySelector("body").style.overflow = "hidden"
-    } else {
-      document.querySelector("body").style.overflow = "auto"
-    }
-  }, [show])
-  console.log(show)
-  const links = [
-    { href: "/aboutus", text: "О нас" },
-    { href: "/rent", text: "Аренда" },
-    { href: "/delivery", text: "Доставка" },
-    { href: "/info", text: "Где кататься" },
-    { href: "/contacts", text: "Контакты" },
-  ]
   return (
     <div className={"header"}>
       <NavLink to='/' className={"header__title"}>
@@ -80,7 +72,14 @@ const Header = () => {
             : changeTime.getMinutes()}
         </div>
         <div
-          onClick={() => setShow(!show)}
+          onClick={() => {
+            setShow(!show)
+            if (show) {
+              document.querySelector("body").style.overflow = "auto"
+            } else {
+              document.querySelector("body").style.overflow = "hidden"
+            }
+          }}
           className={!show ? "burger" : "burger-open burger"}
         >
           <div className='burger_item' />
