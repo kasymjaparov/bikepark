@@ -3,7 +3,7 @@ const api = {
   auth: {
     login: `${root}/auth/login`,
     registration: `${root}/auth/registration`,
-    activation: `${root}/auth/activation`,
+    verification: `${root}/auth/activation`,
   },
 }
 export default api

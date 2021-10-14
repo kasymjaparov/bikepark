@@ -2,10 +2,13 @@ import React from "react"
 import "../../pages/Auth/Auth.css"
 import { Formik } from "formik"
 import * as yup from "yup"
+import { useDispatch, useSelector } from "react-redux"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
+import { registration } from "../../store/actions/auth"
 
 export default function Login() {
   const [show, setShow] = React.useState(false)
+  const dispatch = useDispatch()
   const validationSchema = yup.object().shape({
     phone: yup
       .string()
@@ -25,8 +28,7 @@ export default function Login() {
       .min(9, "Минимальное количество символов 9"),
   })
   const onSubmit = (data, { resetForm }) => {
-    // dispatch(login(data))
-    console.log(data)
+    dispatch(registration(data))
     resetForm({})
   }
   return (
