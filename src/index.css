@@ -79,6 +79,30 @@ h6 {
   width: 1200px;
   margin: 0 auto 0 auto;
 }
+.input_error {
+  font-size: 0.875em;
+  color: #dc3545;
+  margin: 0px 0px 15px 0px;
+}
+.changedAlert {
+  position: absolute;
+  top: -500px;
+  right: 0;
+  width: 350px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border: 1px solid #badbcc;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+.changedAlert-active {
+  top: 50px;
+}
 @media (max-width: 1380px) {
   .mycontainer {
     max-width: 100%;

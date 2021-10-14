@@ -16,17 +16,27 @@ const Header = () => {
     { href: "/contacts", text: "Контакты" },
   ]
   const [changeTime, setChangeTime] = useState(date)
+  const [show, setShow] = React.useState(true)
   useEffect(() => {
     setTimeout(() => {
       setChangeTime(new Date())
     }, milliseconds)
   }, [changeTime])
-  const [show, setShow] = React.useState(true)
-  React.useEffect(() => {
+
+  useEffect(() => {
     if (window.matchMedia("(max-width:650px)").matches) {
       setShow(false)
     }
   }, [])
+  const changeOverflow = () => {
+    setShow(!show)
+    if (show) {
+      document.querySelector("body").style.overflow = "auto"
+    } else {
+      document.querySelector("body").style.overflow = "hidden"
+    }
+  }
+
   return (
     <div className={"header"}>
       <NavLink to='/' className={"header__title"}>
@@ -38,11 +48,9 @@ const Header = () => {
             {links.map(item => (
               <NavLink
                 activeClassName='header__links-item-active'
+                key={item.text}
                 to={item.href}
-                onClick={() => {
-                  if (window.matchMedia("(max-width:650px)").matches)
-                    setShow(!show)
-                }}
+                onClick={() => changeOverflow()}
                 className='header__links-item'
               >
                 {item.text}
@@ -50,9 +58,7 @@ const Header = () => {
             ))}
           </div>
           <NavLink
-            onClick={() => {
-              if (window.matchMedia("(max-width:650px)").matches) setShow(!show)
-            }}
+            onClick={() => changeOverflow()}
             to='/auth'
             className={"header__authLinks"}
           >
@@ -72,14 +78,7 @@ const Header = () => {
             : changeTime.getMinutes()}
         </div>
         <div
-          onClick={() => {
-            setShow(!show)
-            if (show) {
-              document.querySelector("body").style.overflow = "auto"
-            } else {
-              document.querySelector("body").style.overflow = "hidden"
-            }
-          }}
+          onClick={() => changeOverflow()}
           className={!show ? "burger" : "burger-open burger"}
         >
           <div className='burger_item' />

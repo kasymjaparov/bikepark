@@ -1,7 +1,7 @@
 import React from "react"
 import "./Info.css"
 import { Row, Col } from "react-bootstrap"
-import image from "../../assets/images/info_image.png"
+import CardImage from "../../assets/images/info_image.png"
 
 export default function Info() {
   return (
@@ -21,13 +21,13 @@ export default function Info() {
         </div>
         <Row className='info_image-group'>
           <Col className='info_image' lg={4} sm={12}>
-            <img src={image} alt='image' />
+            <img src={CardImage} alt='cardImage' />
           </Col>
           <Col className='info_image' lg={4} sm={12}>
-            <img src={image} alt='image' />
+            <img src={CardImage} alt='cardImage' />
           </Col>
           <Col className='info_image' lg={4} sm={12}>
-            <img src={image} alt='image' />
+            <img src={CardImage} alt='cardImage' />
           </Col>
         </Row>
       </div>
