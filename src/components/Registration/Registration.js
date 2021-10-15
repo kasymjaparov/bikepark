@@ -14,7 +14,7 @@ export default function Login() {
       .string()
       .required("Обязательное поле")
       .matches(/^\+996(\d{9})$/, "Заполните по форме +996XXXXXXXXX "),
-    name: yup
+    username: yup
       .string()
       .required("Обязательное поле")
       .min(3, "Минимальное количество символов 3"),
@@ -36,7 +36,7 @@ export default function Login() {
       <Formik
         initialValues={{
           phone: "",
-          name: "",
+          username: "",
           email: "",
           password: "",
         }}
@@ -58,17 +58,17 @@ export default function Login() {
             <span className='auth_label'>Имя*</span>
             <InputGroup>
               <FormControl
-                value={values.name}
+                value={values.username}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                isInvalid={touched.name && errors.name}
-                name='name'
+                isInvalid={touched.username && errors.username}
+                name='username'
                 className='auth_input'
                 placeholder='Введите имя'
               />
             </InputGroup>
-            {touched.name && errors.name && (
-              <div className='input_error'>{errors.name}</div>
+            {touched.username && errors.username && (
+              <div className='input_error'>{errors.username}</div>
             )}
             <span className='auth_label'>Номер телефона*</span>
             <InputGroup>

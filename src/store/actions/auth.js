@@ -23,7 +23,6 @@ export const login = (userdata, history) => dispatch => {
       })
     })
     .catch(err => {
-      console.log(err)
       dispatch({
         type: constants.LOGIN_FAILED,
         payload: err.response.data.message,
@@ -35,6 +34,7 @@ export const login = (userdata, history) => dispatch => {
       })
     })
 }
+
 export const registration = userdata => dispatch => {
   axios
     .post(api.auth.registration, userdata)
@@ -60,19 +60,22 @@ export const registration = userdata => dispatch => {
       })
     })
 }
-export const verification = token => {
-  return async dispatch => {
-    try {
-      const response = await axios.post(api.auth.verification, { token })
-      dispatch({
-        type: constants.VERIFICATION_SUCCESS,
-        payload: response.data.message,
-      })
-    } catch (err) {
+
+export const verification = (token, history) => dispatch => {
+  axios
+    .post(api.auth.verification, { token })
+    .then(({ data }) => {
+      dispatch({ type: constants.VERIFICATION_SUCCESS, payload: data.message })
+    })
+    .then(() => {
+      setTimeout(() => {
+        history.push("/auth")
+      }, 5000)
+    })
+    .catch(err => {
       dispatch({
         type: constants.VERIFICATION_FAILED,
         payload: err.response.data.message,
       })
-    }
-  }
+    })
 }

@@ -57,36 +57,6 @@ const reducer = (state = initialState, action) => {
           failed: false,
         },
       }
-    case constants.LOGOUT:
-      return {
-        ...state,
-        userData: {},
-        get: {
-          success: false,
-          loading: false,
-          failed: false,
-        },
-        login: {
-          success: false,
-          loading: false,
-          failed: false,
-        },
-        registration: {
-          success: false,
-          loading: false,
-          failed: false,
-        },
-        token: "",
-      }
-    case constants.REGISTRATION_LOADING:
-      return {
-        ...state,
-        registration: {
-          success: false,
-          loading: true,
-          failed: false,
-        },
-      }
     case constants.REGISTRATION_SUCCESS:
       return {
         ...state,
@@ -111,15 +81,6 @@ const reducer = (state = initialState, action) => {
           failed: true,
         },
       }
-    case constants.VERIFICATION_LOADING:
-      return {
-        ...state,
-        verification: {
-          success: false,
-          loading: true,
-          failed: false,
-        },
-      }
     case constants.VERIFICATION_SUCCESS:
       return {
         ...state,
@@ -140,29 +101,6 @@ const reducer = (state = initialState, action) => {
           message: action.payload,
         },
       }
-    case constants.LOGOUT:
-      return {
-        ...state,
-        login: {
-          success: false,
-          loading: false,
-          failed: false,
-        },
-        registration: {
-          success: false,
-          loading: false,
-          failed: false,
-          message: "",
-        },
-        verification: {
-          success: false,
-          loading: false,
-          failed: false,
-          message: "",
-        },
-        tokenLogin: "",
-      }
-
     default:
       return state
   }
