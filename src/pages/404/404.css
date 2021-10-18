@@ -1,5 +1,5 @@
 .nopage {
-  height: calc(100vh - 75px - 105px);
+  height: calc(100vh - 380px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +26,6 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-}
 @media (max-width: 500px) {
   .nopage_title {
     font-size: 100px;

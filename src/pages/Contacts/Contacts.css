@@ -1,0 +1,15 @@
+.contacts_row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contacts_row {
+  margin: 42px 0px 0px 0px;
+}
+.contacts_map {
+  width: 100%;
+  margin: 41px 0px 0px 0px;
+}
+.contacts_map iframe {
+  width: 100%;
+}

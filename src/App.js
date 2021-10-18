@@ -12,7 +12,6 @@ import PrivateRoute from "./routes/PrivateRoute"
 
 function App() {
   const loginState = useSelector(state => state.auth.login)
-  console.log(loginState)
   return (
     <BrowserRouter>
       <ReactNotification isMobile={true} />
