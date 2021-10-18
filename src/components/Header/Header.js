@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import "./Header.css"
 import logo from "../../assets/icons/logo.svg"
 import login from "../../assets/icons/user.svg"
@@ -15,6 +16,7 @@ const Header = () => {
     { href: "/info", text: "Где кататься" },
     { href: "/contacts", text: "Контакты" },
   ]
+  const loginState = useSelector(state => state.auth.login)
   const [changeTime, setChangeTime] = useState(date)
   const [show, setShow] = React.useState(true)
   useEffect(() => {
@@ -29,7 +31,9 @@ const Header = () => {
     }
   }, [])
   const changeOverflow = () => {
-    setShow(!show)
+    if (window.matchMedia("(max-width:650px)").matches) {
+      setShow(!show)
+    }
     if (show) {
       document.querySelector("body").style.overflow = "auto"
     } else {
@@ -59,7 +63,7 @@ const Header = () => {
           </div>
           <NavLink
             onClick={() => changeOverflow()}
-            to='/auth'
+            to={loginState.success ? "/lk" : "/auth"}
             className={"header__authLinks"}
           >
             <img src={login} alt='login' />

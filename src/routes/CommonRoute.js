@@ -5,6 +5,7 @@ import Delivery from "../pages/Delivery/Delivery"
 import Info from "../pages/Info/Info"
 import Contacts from "../pages/Contacts/Contacts"
 import Verification from "../pages/Verification/Verification"
+import NoPage from "../pages/404/404"
 
 export default function CommonRoute() {
   return (
@@ -15,7 +16,7 @@ export default function CommonRoute() {
       <Route path='/info' component={Info} />
       <Route path='/contacts' component={Contacts} />
       <Route path='/verification/:token' component={Verification} />
-      <Redirect to='/auth' />
+      <Route component={NoPage} />
     </Switch>
   )
 }
