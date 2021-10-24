@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import "./Header.css"
 import logo from "../../assets/icons/logo.svg"
 import login from "../../assets/icons/user.svg"
@@ -11,7 +11,7 @@ const Header = () => {
   const milliseconds = (60 - seconds) * 1000
   const links = [
     { href: "/aboutus", text: "О нас" },
-    { href: "/rent", text: "Аренда" },
+    { href: "/", text: "Аренда" },
     { href: "/delivery", text: "Доставка" },
     { href: "/info", text: "Где кататься" },
     { href: "/contacts", text: "Контакты" },
@@ -43,9 +43,9 @@ const Header = () => {
 
   return (
     <div className={"header"}>
-      <NavLink to='/' className={"header__title"}>
+      <div className={"header__title"}>
         <img src={logo} alt='logo bike park' />{" "}
-      </NavLink>
+      </div>
       {show && (
         <nav>
           <div className='header__links'>
@@ -56,6 +56,7 @@ const Header = () => {
                 to={item.href}
                 onClick={() => changeOverflow()}
                 className='header__links-item'
+                exact
               >
                 {item.text}
               </NavLink>

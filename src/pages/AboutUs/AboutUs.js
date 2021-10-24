@@ -4,6 +4,63 @@ import bikers from "../../assets/images/aboutUs_bikers.png"
 import authorIcon from "../../assets/icons/author.svg"
 
 export default function AboutUs() {
+  var carouselItems = []
+  for (var i = 0; i < 3; i++) {
+    carouselItems.push(
+      <Carousel.Item interval={600000}>
+        <div className='aboutUs-carousel_block'>
+          <div className='aboutUs-carousel_block_item'>
+            <div className='aboutUs-carousel_block_item_text'>
+              Безусловно, семантический разбор внешних противодействий
+              способствует повышению качества вывода текущих активов.
+              противодействий способствует повышению качества вывода текущих
+              активов.
+            </div>
+            <div className='aboutUs-carousel_block_item_author'>
+              <span className='aboutUs-carousel_block_item_author_icon'>
+                <img src={authorIcon} alt='authorIcon' />
+              </span>
+              <span className='aboutUs-carousel_block_item_author_name'>
+                Name
+              </span>
+            </div>
+          </div>
+          <div className='aboutUs-carousel_block_item'>
+            <div className='aboutUs-carousel_block_item_text'>
+              Безусловно, семантический разбор внешних противодействий
+              способствует повышению качества вывода текущих активов.
+              противодействий способствует повышению качества вывода текущих
+              активов.
+            </div>
+            <div className='aboutUs-carousel_block_item_author'>
+              <span className='aboutUs-carousel_block_item_author_icon'>
+                <img src={authorIcon} alt='authorIcon' />
+              </span>
+              <span className='aboutUs-carousel_block_item_author_name'>
+                Name
+              </span>
+            </div>
+          </div>
+          <div className='aboutUs-carousel_block_item'>
+            <div className='aboutUs-carousel_block_item_text'>
+              Безусловно, семантический разбор внешних противодействий
+              способствует повышению качества вывода текущих активов.
+              противодействий способствует повышению качества вывода текущих
+              активов.
+            </div>
+            <div className='aboutUs-carousel_block_item_author'>
+              <span className='aboutUs-carousel_block_item_author_icon'>
+                <img src={authorIcon} alt='authorIcon' />
+              </span>
+              <span className='aboutUs-carousel_block_item_author_name'>
+                Name
+              </span>
+            </div>
+          </div>
+        </div>
+      </Carousel.Item>
+    )
+  }
   return (
     <div className='aboutUs'>
       <div className='delivery aboutUs-info'>
@@ -29,63 +86,7 @@ export default function AboutUs() {
       </div>
       <div className='delivery aboutUs-carousel'>
         <div className='delivery_block'>
-          <Carousel>
-            <Carousel.Item interval={600000}>
-              <div className='aboutUs-carousel_block'>
-                <div className='aboutUs-carousel_block_item'>
-                  <div className='aboutUs-carousel_block_item_text'>
-                    Безусловно, семантический разбор внешних противодействий
-                    способствует повышению качества вывода текущих активов.
-                    противодействий способствует повышению качества вывода
-                    текущих активов.
-                  </div>
-                  <div className='aboutUs-carousel_block_item_author'>
-                    <span className='aboutUs-carousel_block_item_author_icon'>
-                      <img src={authorIcon} alt='authorIcon' />
-                    </span>
-                    <span className='aboutUs-carousel_block_item_author_name'>
-                      Name
-                    </span>
-                  </div>
-                </div>
-                <div className='aboutUs-carousel_block_item'>
-                  <div className='aboutUs-carousel_block_item_text'>
-                    Безусловно, семантический разбор внешних противодействий
-                    способствует повышению качества вывода текущих активов.
-                    противодействий способствует повышению качества вывода
-                    текущих активов.
-                  </div>
-                  <div className='aboutUs-carousel_block_item_author'>
-                    <span className='aboutUs-carousel_block_item_author_icon'>
-                      <img src={authorIcon} alt='authorIcon' />
-                    </span>
-                    <span className='aboutUs-carousel_block_item_author_name'>
-                      Name
-                    </span>
-                  </div>
-                </div>
-                <div className='aboutUs-carousel_block_item'>
-                  <div className='aboutUs-carousel_block_item_text'>
-                    Безусловно, семантический разбор внешних противодействий
-                    способствует повышению качества вывода текущих активов.
-                    противодействий способствует повышению качества вывода
-                    текущих активов.
-                  </div>
-                  <div className='aboutUs-carousel_block_item_author'>
-                    <span className='aboutUs-carousel_block_item_author_icon'>
-                      <img src={authorIcon} alt='authorIcon' />
-                    </span>
-                    <span className='aboutUs-carousel_block_item_author_name'>
-                      Name
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item interval={5000}>b</Carousel.Item>
-            <Carousel.Item interval={5000}>c</Carousel.Item>
-            <Carousel.Item interval={5000}>d</Carousel.Item>
-          </Carousel>
+          <Carousel>{carouselItems}</Carousel>
         </div>
       </div>
     </div>

@@ -1,0 +1,34 @@
+.rent_header {
+  display: flex;
+}
+.rent_header_title {
+  width: 50%;
+}
+.rent_header_free {
+  display: flex;
+  width: 50%;
+}
+.rent_header_free_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rent_header_free_item img {
+  width: 170px;
+  display: block;
+  margin: 0px 0px 0px 30px;
+}
+.rent_header_free_item:nth-child(1) {
+  width: 316px;
+  background: url("../../assets/images/rent_header_background1.png");
+  margin-right: -120px;
+}
+.rent_header_free_item:nth-child(2) {
+  width: 316px;
+  margin-right: -120px;
+  background: url("../../assets/images/rent_header_background2.png");
+}
+.rent_header_free_item:nth-child(3) {
+  width: 272px;
+  background: url("../../assets/images/rent_header_background3.png");
+}

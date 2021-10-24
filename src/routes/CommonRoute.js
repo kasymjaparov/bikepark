@@ -1,5 +1,4 @@
-import { Route, Redirect, Switch } from "react-router-dom"
-import Main from "../pages/Main/Main"
+import { Route, Switch } from "react-router-dom"
 import Auth from "../pages/Auth/Auth"
 import Delivery from "../pages/Delivery/Delivery"
 import Info from "../pages/Info/Info"
@@ -7,17 +6,24 @@ import Contacts from "../pages/Contacts/Contacts"
 import Verification from "../pages/Verification/Verification"
 import NoPage from "../pages/404/404"
 import AboutUs from "../pages/AboutUs/AboutUs"
+import Rent from "../pages/Rent/Rent"
+import Lk from "../pages/Lk/Lk"
 
 export default function CommonRoute() {
+  const commonRoutes = [
+    { path: "/", component: Rent, exact: true },
+    { path: "/delivery", component: Delivery, exact: true },
+    { path: "/info", component: Info, exact: true },
+    { path: "/contacts", component: Contacts, exact: true },
+    { path: "/aboutus", component: AboutUs, exact: true },
+    { path: "/auth", component: Auth, exact: false },
+    { path: "/verification/:token", component: Verification, exact: false },
+  ]
   return (
     <Switch>
-      <Route path='/' component={Main} exact={true} />
-      <Route path='/auth' component={Auth} />
-      <Route path='/delivery' component={Delivery} />
-      <Route path='/info' component={Info} />
-      <Route path='/contacts' component={Contacts} />
-      <Route path='/aboutus' component={AboutUs} />
-      <Route path='/verification/:token' component={Verification} />
+      {commonRoutes.map(item => (
+        <Route path={item.path} component={item.component} exact={item.exact} />
+      ))}
       <Route component={NoPage} />
     </Switch>
   )

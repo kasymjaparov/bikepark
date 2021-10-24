@@ -1,0 +1,33 @@
+.lk_links {
+  margin: 40px 0px 0px 0px;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 2;
+}
+.lk_links_line {
+  position: absolute;
+  top: 47px;
+  width: 100%;
+  background: #dde3eb;
+  z-index: 1;
+  height: 2px;
+}
+.lk_links_item {
+  text-decoration: none;
+  color: #14233d;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 0px 0px 25px 0px;
+  margin: 0px 0px 34px 0px;
+  text-align: center;
+  width: 33.333%;
+}
+.lk_links_item:hover {
+  color: inherit;
+}
+.lk_links_item-active {
+  color: #297fff;
+  border-bottom: 2px solid #297fff;
+  z-index: 2;
+}

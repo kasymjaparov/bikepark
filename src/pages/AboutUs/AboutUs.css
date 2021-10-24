@@ -24,7 +24,7 @@
   background: #ffffff;
   border-radius: 15px;
   padding: 24px;
-  margin: 0px 40px 0px 0px ;
+  margin: 0px 40px 0px 0px;
 }
 .aboutUs-carousel_block_item_author {
   text-align: center;
@@ -35,6 +35,9 @@
   color: #14233d;
   margin: 0px 0px 75px 0px;
 }
+.carousel-indicators {
+  bottom: -50px;
+}
 @media (max-width: 1050px) {
   .aboutUs_row {
     display: flex;
@@ -43,5 +46,23 @@
   }
   .aboutUs_image {
     margin: 20px 0px 0px 0px;
+  }
+
+  .aboutUs-carousel_block {
+    flex-direction: column;
+  }
+  .aboutUs-carousel_block_item:nth-child(1) {
+    margin: 0px 0px 0px 0px;
+  }
+  .aboutUs-carousel_block_item {
+    margin: 40px 0px 0px 0px;
+  }
+}
+@media (max-width: 650px) {
+  .aboutUs_image {
+    width: 100%;
+  }
+  .aboutUs_image img {
+    max-width: 100%;
   }
 }
