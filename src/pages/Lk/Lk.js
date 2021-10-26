@@ -11,7 +11,7 @@ export default function Lk() {
       <div className='lk_block delivery_block'>
         <div className='delivery_title'>Личный кабинет</div>
         <div className='lk_links'>
-          <div className='lk_links_line' />
+          {/* <div className='lk_links_line' /> */}
           <NavLink
             className='lk_links_item'
             activeClassName='lk_links_item-active'

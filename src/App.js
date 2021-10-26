@@ -17,8 +17,7 @@ function App() {
       <ReactNotification isMobile={true} />
       <Container>
         <Header />
-        {false ? <CommonRoute /> : <PrivateRoute />}
-        {/* {!loginState.success ? <CommonRoute /> : <PrivateRoute />} */}
+        {!loginState.success ? <CommonRoute /> : <PrivateRoute />}
       </Container>
       <Footer />
     </BrowserRouter>

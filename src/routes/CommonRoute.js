@@ -7,7 +7,6 @@ import Verification from "../pages/Verification/Verification"
 import NoPage from "../pages/404/404"
 import AboutUs from "../pages/AboutUs/AboutUs"
 import Rent from "../pages/Rent/Rent"
-import Lk from "../pages/Lk/Lk"
 
 export default function CommonRoute() {
   const commonRoutes = [
