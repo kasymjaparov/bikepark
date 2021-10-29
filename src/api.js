@@ -7,6 +7,7 @@ const api = {
   },
   bikes: {
     getAll: `${root}/bike/getAll`,
+    getfiltered:`${root}/bike/getFiltered`
   },
 }
 export default api
