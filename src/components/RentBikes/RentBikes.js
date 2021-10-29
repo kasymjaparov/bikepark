@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux"
+
 export default function RentBikes() {
-  const bikesState = useSelector(state => state.bikes.allBikes)
+  const allBikesState = useSelector(state => state.bikes.allBikes)
+  
   return (
     <div className='rent_bikes_row'>
-      {bikesState.bikes.map((item, index) => (
+      {allBikesState.bikes.map((item, index) => (
         <div key={index} className='rent_bikes_row_item'>
           <div className='rent_bikes_row_item_header'>
             <div className='rent_bikes_row_item_header_size'>

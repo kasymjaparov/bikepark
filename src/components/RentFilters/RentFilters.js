@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { Form } from "react-bootstrap"
-import { useSelector } from "react-redux"
 import { Button } from "react-bootstrap"
 import { useDispatch } from "react-redux"
 import { getFiltered } from "../../store/actions/bikes"
 
 export default function RentFilters() {
-  const onlyUnique = (value, index, self) => {
-    return self.indexOf(value) === index
+  const filters = {
+    brands: ["Stels", "Aist", "Десна"],
+    wheelsSize: [26, 28, 24],
+    frameSize: [19, 16, 24],
   }
   const [params, setParams] = useState({
     brand: "Все",
@@ -16,16 +17,8 @@ export default function RentFilters() {
     isRented: "Все",
   })
   const dispatch = useDispatch()
-  const bikesBrand = useSelector(state =>
-    state.bikes.allBikes.bikes.map(item => item.brand).filter(onlyUnique)
-  )
-  const bikesWheelSize = useSelector(state =>
-    state.bikes.allBikes.bikes.map(item => item.wheelsSize).filter(onlyUnique)
-  )
-  const bikesFrameSize = useSelector(state =>
-    state.bikes.allBikes.bikes.map(item => item.frameSize).filter(onlyUnique)
-  )
   const findByFilters = () => {
+    console.log("click")
     dispatch(getFiltered(params))
   }
   return (
@@ -36,7 +29,7 @@ export default function RentFilters() {
           onChange={e => setParams({ ...params, brand: e.target.value })}
         >
           <option value='Все'>Все</option>
-          {bikesBrand.map((item, index) => (
+          {filters.brands.map((item, index) => (
             <option key={index} value={item}>
               {item}
             </option>
@@ -49,7 +42,7 @@ export default function RentFilters() {
           onChange={e => setParams({ ...params, frameSize: e.target.value })}
         >
           <option value='Все'>Все</option>
-          {bikesFrameSize.map((item, index) => (
+          {filters.frameSize.map((item, index) => (
             <option key={index} value={item}>
               {item}
             </option>
@@ -62,7 +55,7 @@ export default function RentFilters() {
           onChange={e => setParams({ ...params, wheelsSize: e.target.value })}
         >
           <option value='Все'>Все</option>
-          {bikesWheelSize.map((item, index) => (
+          {filters.wheelsSize.map((item, index) => (
             <option key={index} value={item}>
               {item}
             </option>
