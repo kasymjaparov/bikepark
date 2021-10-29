@@ -3,7 +3,7 @@ import "../../pages/Auth/Auth.css"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { Formik } from "formik"
 import * as yup from "yup"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { login } from "../../store/actions/auth"
 import { useHistory } from "react-router-dom"
 
@@ -11,7 +11,6 @@ export default function Login(props) {
   const dispatch = useDispatch()
   const [show, setShow] = React.useState(false)
   let history = useHistory()
-  const loginState = useSelector(state => state.auth.login)
   const validationSchema = yup.object().shape({
     email: yup
       .string()

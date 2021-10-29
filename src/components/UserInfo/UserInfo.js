@@ -1,5 +1,5 @@
 import "./UserInfo.css"
-import { InputGroup, FormControl, Button, Row, Col } from "react-bootstrap"
+import { InputGroup, FormControl, Row, Col } from "react-bootstrap"
 
 export default function UserInfo() {
   return (

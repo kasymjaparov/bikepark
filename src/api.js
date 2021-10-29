@@ -5,5 +5,8 @@ const api = {
     registration: `${root}/auth/registration`,
     verification: `${root}/auth/activation`,
   },
+  bikes: {
+    getAll: `${root}/bike/getAll`,
+  },
 }
 export default api

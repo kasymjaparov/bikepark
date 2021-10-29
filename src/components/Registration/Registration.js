@@ -2,7 +2,7 @@ import React from "react"
 import "../../pages/Auth/Auth.css"
 import { Formik } from "formik"
 import * as yup from "yup"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { registration } from "../../store/actions/auth"
 

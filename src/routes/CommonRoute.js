@@ -21,7 +21,12 @@ export default function CommonRoute() {
   return (
     <Switch>
       {commonRoutes.map(item => (
-        <Route path={item.path} component={item.component} exact={item.exact} />
+        <Route
+          key={item.path}
+          path={item.path}
+          component={item.component}
+          exact={item.exact}
+        />
       ))}
       <Route component={NoPage} />
     </Switch>
