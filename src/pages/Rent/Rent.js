@@ -12,20 +12,19 @@ export default function Rent() {
   useEffect(() => {
     dispatch(getAll())
   }, [])
-  const loadingBikes = useSelector(state => state.bikes.allBikes.loading)
+  const { loading, success, failed, bikes } = useSelector(
+    state => state.bikes.allBikes
+  )
   return (
     <div className='rent '>
       <RentHeader />
       <div className='delivery block-prefix rent_bikes'>
         <div className='delivery_block'>
-          {!loadingBikes ? (
-            <div>
-              <RentFilters />
-              <RentBikes />
-            </div>
-          ) : (
-            <Loading />
-          )}
+          <RentFilters />
+          {loading && <Loading />}
+          {success && <RentBikes />}
+          {failed && <div>Ошибка сервера</div>}
+          {bikes.length == 0 && !loading && <div>Таких велосипедов нет</div>}
         </div>
       </div>
     </div>

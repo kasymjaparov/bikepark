@@ -3,6 +3,7 @@ import api from "../../api"
 import constants from "../constants"
 
 export const getAll = () => dispatch => {
+  dispatch({ type: constants.GETALLBIKES_LOADING })
   axios
     .get(api.bikes.getAll)
     .then(({ data }) => {
@@ -17,6 +18,7 @@ export const getAll = () => dispatch => {
 }
 
 export const getFiltered = params => dispatch => {
+  dispatch({ type: constants.GET_FILTERED_BIKES_LOADING })
   axios
     .get(
       `${api.bikes.getfiltered}?brand=${params.brand}&wheelsSize=${params.wheelsSize}&frameSize=${params.frameSize}&isRented=${params.isRented}`

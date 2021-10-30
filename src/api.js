@@ -7,7 +7,8 @@ const api = {
   },
   bikes: {
     getAll: `${root}/bike/getAll`,
-    getfiltered:`${root}/bike/getFiltered`
+    getfiltered: `${root}/bike/getFiltered`,
+    getFilters: `${root}/filters/getAll`,
   },
 }
 export default api
