@@ -125,6 +125,24 @@
   color: #ffffff;
   border-radius: 10px;
   text-align: center;
+  cursor: pointer;
+}
+.rent_bikes_row_item_btn-choosen {
+  border: 1px solid #297fff;
+  color: #297fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  padding: 9px 0px;
+  cursor: pointer;
+}
+.rent_bikes_button {
+  width: 260px;
+  display: block;
+  height: 60px;
+  border-radius: 10px;
+  margin: 0 auto 0 auto;
 }
 @media (max-width: 1100px) {
   .rent_header_block {

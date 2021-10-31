@@ -1,4 +1,5 @@
-const root = "http://localhost:5000"
+const root =
+  "https://intense-beyond-43314.herokuapp.com" || "http://localhost:5000"
 const api = {
   auth: {
     login: `${root}/auth/login`,

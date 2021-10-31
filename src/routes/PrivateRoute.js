@@ -6,6 +6,7 @@ import Contacts from "../pages/Contacts/Contacts"
 import NoPage from "../pages/404/404"
 import AboutUs from "../pages/AboutUs/AboutUs"
 import Rent from "../pages/Rent/Rent"
+import Application from "../pages/Application/Application"
 
 export default function PrivateRoute() {
   const privateRoutes = [
@@ -15,6 +16,7 @@ export default function PrivateRoute() {
     { path: "/info", component: Info, exact: true },
     { path: "/contacts", component: Contacts, exact: true },
     { path: "/aboutus", component: AboutUs, exact: true },
+    { path: "/application", component: Application, exact: true },
   ]
   return (
     <Switch>

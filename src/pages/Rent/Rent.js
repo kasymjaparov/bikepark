@@ -6,8 +6,9 @@ import { getAll } from "../../store/actions/bikes"
 import { useEffect } from "react"
 import RentBikes from "../../components/RentBikes/RentBikes"
 import Loading from "../../components/Loading/Loading"
+import { Button } from "react-bootstrap"
 
-export default function Rent() {
+export default function Rent(props) {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getAll())
@@ -15,6 +16,7 @@ export default function Rent() {
   const { loading, success, failed, bikes } = useSelector(
     state => state.bikes.allBikes
   )
+  const choosenBikes = useSelector(state => state.bikes.choosenBikes)
   return (
     <div className='rent '>
       <RentHeader />
@@ -23,7 +25,15 @@ export default function Rent() {
           <RentFilters />
           {loading && <Loading />}
           {success && <RentBikes />}
-          {failed && <div>Ошибка сервера</div>}
+          {success && (
+            <Button
+              disabled={!choosenBikes.length}
+              className='rent_bikes_button'
+              onClick={() => props.history.push("/application")}
+            >
+              Далее
+            </Button>
+          )}
           {bikes.length == 0 && !loading && <div>Таких велосипедов нет</div>}
         </div>
       </div>

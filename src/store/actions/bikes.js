@@ -36,3 +36,10 @@ export const getFiltered = params => dispatch => {
       })
     })
 }
+
+export const addBike = bike => dispatch => {
+  dispatch({ type: constants.ADD_BIKES, payload: bike })
+}
+export const deleteBike = id => dispatch => {
+  dispatch({ type: constants.DELETE_BIKES, payload: id })
+}

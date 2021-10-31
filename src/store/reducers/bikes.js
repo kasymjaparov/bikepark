@@ -14,6 +14,7 @@ const initialState = {
     failed: false,
     message: "",
   },
+  choosenBikes: [],
 }
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -89,6 +90,19 @@ const reducer = (state = initialState, action) => {
           failed: true,
           message: action.payload,
         },
+      }
+
+    case constants.ADD_BIKES:
+      return {
+        ...state,
+        choosenBikes: [...state.choosenBikes, action.payload],
+      }
+    case constants.DELETE_BIKES:
+      return {
+        ...state,
+        choosenBikes: state.choosenBikes.filter(
+          todo => todo._id !== action.payload
+        ),
       }
     default:
       return state

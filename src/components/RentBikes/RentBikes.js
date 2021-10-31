@@ -1,8 +1,10 @@
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { addBike, deleteBike } from "../../store/actions/bikes"
 
 export default function RentBikes() {
   const allBikesState = useSelector(state => state.bikes.allBikes)
-  
+  const bikesState = useSelector(state => state.bikes.choosenBikes)
+  const dispatch = useDispatch()
   return (
     <div className='rent_bikes_row'>
       {allBikesState.bikes.map((item, index) => (
@@ -20,7 +22,25 @@ export default function RentBikes() {
           </div>
           <div className='rent_bikes_row_item_title'>{item.name}</div>
           <div className='rent_bikes_row_item_price'>{item.price} сом</div>
-          <div className='rent_bikes_row_item_btn'>Выбрано</div>
+          {!item.isRented ? (
+            bikesState.includes(item) ? (
+              <div
+                onClick={() => dispatch(deleteBike(item._id))}
+                className='rent_bikes_row_item_btn-choosen'
+              >
+                Выбрано
+              </div>
+            ) : (
+              <div
+                onClick={() => dispatch(addBike(item))}
+                className='rent_bikes_row_item_btn'
+              >
+                Выбрать
+              </div>
+            )
+          ) : (
+            <div>Арендован до 26.11.2021</div>
+          )}
         </div>
       ))}
     </div>

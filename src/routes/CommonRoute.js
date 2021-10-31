@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import Auth from "../pages/Auth/Auth"
 import Delivery from "../pages/Delivery/Delivery"
 import Info from "../pages/Info/Info"
@@ -28,7 +28,7 @@ export default function CommonRoute() {
           exact={item.exact}
         />
       ))}
-      <Route component={NoPage} />
+      <Redirect to='/auth' />
     </Switch>
   )
 }
