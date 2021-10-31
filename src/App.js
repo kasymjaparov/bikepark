@@ -9,15 +9,21 @@ import Footer from "./components/Footer/Footer"
 import { BrowserRouter } from "react-router-dom"
 import CommonRoute from "./routes/CommonRoute.js"
 import PrivateRoute from "./routes/PrivateRoute"
+import { useEffect } from "react"
 
 function App() {
-  const loginState = useSelector(state => state.auth.login)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  const success =
+    useSelector(state => state.auth.login.success) ||
+    window.localStorage.getItem("token")
   return (
     <BrowserRouter>
       <ReactNotification isMobile={true} />
       <Container>
         <Header />
-        {!loginState.success ? <CommonRoute /> : <PrivateRoute />}
+        {!success ? <CommonRoute /> : <PrivateRoute />}
       </Container>
       <Footer />
     </BrowserRouter>

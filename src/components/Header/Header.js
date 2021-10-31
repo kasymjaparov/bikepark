@@ -16,7 +16,9 @@ const Header = () => {
     { href: "/info", text: "Где кататься" },
     { href: "/contacts", text: "Контакты" },
   ]
-  const loginState = useSelector(state => state.auth.login)
+  const success =
+    useSelector(state => state.auth.login.success) ||
+    window.localStorage.getItem("token")
   const [changeTime, setChangeTime] = useState(date)
   const [show, setShow] = React.useState(true)
   useEffect(() => {
@@ -64,7 +66,7 @@ const Header = () => {
           </div>
           <NavLink
             onClick={() => changeOverflow()}
-            to={loginState.success ? "/lk" : "/auth"}
+            to={success ? "/lk" : "/auth"}
             className={"header__authLinks"}
           >
             <img src={login} alt='login' />
