@@ -18,7 +18,7 @@ const Header = () => {
   ]
   const success =
     useSelector(state => state.auth.login.success) ||
-    window.localStorage.getItem("token")
+    window.sessionStorage.getItem("token")
   const [changeTime, setChangeTime] = useState(date)
   const [show, setShow] = React.useState(true)
   useEffect(() => {

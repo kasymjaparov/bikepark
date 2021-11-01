@@ -104,6 +104,11 @@ const reducer = (state = initialState, action) => {
           todo => todo._id !== action.payload
         ),
       }
+    case constants.CLEAR_BIKES:
+      return {
+        ...state,
+        choosenBikes: [],
+      }
     default:
       return state
   }

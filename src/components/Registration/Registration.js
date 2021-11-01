@@ -114,12 +114,12 @@ export default function Login() {
                 type={!show ? "password" : "text"}
                 autoComplete='on'
               />
-              <b>
+              <div className="auth_password_eye">
                 <i
                   onClick={() => setShow(!show)}
                   className={!show ? "fas fa-eye" : "fas fa-eye-slash"}
                 ></i>
-              </b>
+              </div>
             </InputGroup>
             {touched.password && errors.password && (
               <div className='input_error'>{errors.password}</div>

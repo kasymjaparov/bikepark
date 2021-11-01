@@ -43,3 +43,6 @@ export const addBike = bike => dispatch => {
 export const deleteBike = id => dispatch => {
   dispatch({ type: constants.DELETE_BIKES, payload: id })
 }
+export const clearBikes = () => dispatch => {
+  dispatch({ type: constants.CLEAR_BIKES })
+}

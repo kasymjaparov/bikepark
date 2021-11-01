@@ -11,5 +11,9 @@ const api = {
     getfiltered: `${root}/bike/getFiltered`,
     getFilters: `${root}/filters/getAll`,
   },
+  order: {
+    add: `${root}/order/new`,
+    get: `${root}/order/getUsersOrders`,
+  },
 }
 export default api

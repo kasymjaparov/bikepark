@@ -19,5 +19,6 @@ const notifications = {
   login: { message: "Вы успешно вошли в свой аккаунт" },
   registration: { message: "Перейдите на указанную вами почту" },
   verification: { message: "Вы верифицировали свой аккаунт" },
+  order: { message: "Вы успешно отправили заявку" },
 }
 export default notifications

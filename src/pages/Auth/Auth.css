@@ -35,10 +35,10 @@
   color: #abb1c5;
   font-size: 16px;
 }
-b {
-  margin: 15px 0px 0px 0px;
+.auth_password_eye {
+  margin: 15px 0px 15px 0px;
   color: #297fff;
-  height: 40px;
+
   width: 30px;
   border: 1px solid #ced4da;
   display: flex;

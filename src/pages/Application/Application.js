@@ -1,45 +1,34 @@
 import "./Application.css"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
-import { useSelector } from "react-redux"
-import { useState } from "react"
+import { useSelector, useDispatch } from "react-redux"
 import { Formik } from "formik"
-import * as yup from "yup"
+
+import { addOrder } from "../../store/actions/order"
+import diff_days from "../../utils/DiffDays"
+import sum from "../../utils/Sum"
+import validationSchema from "../../utils/ValidSchemaApplication"
 
 export default function Application(props) {
-  const validationSchema = yup.object().shape({
-    phone: yup
-      .string()
-      .required("Обязательное поле")
-      .matches(/^\+996(\d{9})$/, "Заполните по форме +996XXXXXXXXX "),
-    name: yup
-      .string()
-      .required("Обязательное поле")
-      .min(3, "Минимальное количество символов 3"),
-    madeAt: yup.string().required("Обязательное поле"),
-    expiresAt: yup.string().required("Обязательное поле"),
-    addressOfClient: yup.string().required("Обязательное поле"),
-    addressOfAdmin: yup.string().required("Обязательное поле"),
-  })
-  const onSubmit = (data, { resetForm }) => {
-    console.log({ ...data, bikes: bikes })
-    resetForm({})
-  }
-  const diff_days = (dt2, dt1) => {
-    const date2 = new Date(dt2)
-    const date1 = new Date(dt1)
-    const diffTime = Math.abs(date2 - date1) || 0
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-    return diffDays
-  }
-  const [date1, setDate1] = useState()
-  const [date2, setDate2] = useState()
+  const dispatch = useDispatch()
   const bikes = useSelector(state => state.bikes.choosenBikes)
-  const sum = (date2, date1) => {
-    let sum = 0
-    bikes.forEach(item => {
-      sum += item.price * (diff_days(date1, date2) || 0)
+  const order = useSelector(state => state.bikes.choosenBikes)
+  const onSubmit = (data, { resetForm }) => {
+    const newBikes = bikes.map(item => {
+      return {
+        bikeId: item._id,
+        price: item.price,
+      }
     })
-    return sum
+    dispatch(
+      addOrder(
+        {
+          ...data,
+          bikes: newBikes,
+        },
+        props.history
+      )
+    )
+    resetForm({})
   }
 
   return (
@@ -223,18 +212,18 @@ export default function Application(props) {
                         Итого:
                       </div>
                       <div className='choosenBikes_block_row_prices_value choosenBikes_block_row_prices_value-som'>
-                        {sum(values.expiresAt, values.madeAt)} сом
+                        {sum(values.expiresAt, values.madeAt, bikes)} сом
                       </div>
                     </div>
                   </div>
                 </div>
                 <Button
-                  disabled={!isValid || !dirty}
+                  disabled={!isValid || !dirty || !bikes.length}
                   onClick={handleSubmit}
                   style={{ marginTop: 20 }}
                   className='rent_bikes_button'
                 >
-                  Забронировать
+                  {order.loading ? "Загрузка..." : "Забронировать"}
                 </Button>
               </div>
             </div>

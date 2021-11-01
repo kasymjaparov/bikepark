@@ -1,10 +1,14 @@
+import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { addBike, deleteBike } from "../../store/actions/bikes"
+import { addBike, deleteBike, clearBikes } from "../../store/actions/bikes"
 
 export default function RentBikes() {
   const allBikesState = useSelector(state => state.bikes.allBikes)
   const bikesState = useSelector(state => state.bikes.choosenBikes)
   const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(clearBikes())
+  }, [])
   return (
     <div className='rent_bikes_row'>
       {allBikesState.bikes.map((item, index) => (
@@ -39,7 +43,7 @@ export default function RentBikes() {
               </div>
             )
           ) : (
-            <div>Арендован до 26.11.2021</div>
+            <div className='auth_label'>Арендован до 26.11.2021</div>
           )}
         </div>
       ))}

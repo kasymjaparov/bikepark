@@ -9,7 +9,7 @@ export const login = (userdata, history) => dispatch => {
   axios
     .post(api.auth.login, userdata)
     .then(({ data }) => {
-      window.localStorage.setItem("token", data.token)
+      window.sessionStorage.setItem("token", data.token)
       dispatch({ type: constants.LOGIN_SUCCESS, payload: data })
     })
     .then(() => {

@@ -120,7 +120,7 @@ nav {
     flex-direction: column;
     overflow: hidden;
     width: 100%;
-    height: calc(100% - 75px);
+    height: 100vh;
     background: rgb(255, 255, 255);
     overflow: hidden;
     padding: 90px 0px 0px 0px;
