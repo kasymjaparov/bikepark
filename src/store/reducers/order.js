@@ -1,10 +1,16 @@
 import constants from "../constants"
 
 const initialState = {
-  order: {
+  addOrder: {
     loading: false,
     success: false,
     failed: false,
+  },
+  getOrders: {
+    loading: false,
+    success: false,
+    failed: false,
+    orders: [],
   },
 }
 const reducer = (state = initialState, action) => {
@@ -12,7 +18,7 @@ const reducer = (state = initialState, action) => {
     case constants.ORDER_ADD_LOADING:
       return {
         ...state,
-        order: {
+        addOrder: {
           success: false,
           loading: true,
           failed: false,
@@ -21,7 +27,7 @@ const reducer = (state = initialState, action) => {
     case constants.ORDER_ADD_SUCCESS:
       return {
         ...state,
-        order: {
+        addOrder: {
           success: true,
           loading: false,
           failed: false,
@@ -30,10 +36,41 @@ const reducer = (state = initialState, action) => {
     case constants.ORDER_ADD_FAILED:
       return {
         ...state,
-        order: {
+        addOrder: {
           success: false,
           loading: false,
           failed: true,
+        },
+      }
+
+    case constants.ORDER_GET_LOADING:
+      return {
+        ...state,
+        getOrders: {
+          success: false,
+          loading: true,
+          failed: false,
+          orders: [],
+        },
+      }
+    case constants.ORDER_GET_SUCCESS:
+      return {
+        ...state,
+        getOrders: {
+          success: true,
+          loading: false,
+          failed: false,
+          orders: action.payload,
+        },
+      }
+    case constants.ORDER_GET_FAILED:
+      return {
+        ...state,
+        getOrders: {
+          success: false,
+          loading: false,
+          failed: true,
+          orders: [],
         },
       }
     default:

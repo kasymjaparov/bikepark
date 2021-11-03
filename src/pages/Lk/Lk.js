@@ -1,17 +1,23 @@
 import "./Lk.css"
 import { NavLink } from "react-router-dom"
 import { Route } from "react-router-dom"
+import { useDispatch } from "react-redux"
 import CurrentOrders from "../../components/CurrentOrders/CurrentOrders"
 import DoneOrders from "../../components/DoneOrders/DoneOrders"
 import UserInfo from "../../components/UserInfo/UserInfo"
+import { getOrders } from "../../store/actions/order"
+import { useEffect } from "react"
 
 export default function Lk() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getOrders())
+  }, [])
   return (
     <div className='lk delivery'>
       <div className='lk_block delivery_block'>
         <div className='delivery_title'>Личный кабинет</div>
         <div className='lk_links'>
-          {/* <div className='lk_links_line' /> */}
           <NavLink
             className='lk_links_item'
             activeClassName='lk_links_item-active'

@@ -27,9 +27,27 @@ export const addOrder = (order, history) => dispatch => {
     })
     .catch(err => {
       console.log(err)
-      //   dispatch({
-      //     type: constants.ORDER_ADD_FAILED,
-      //     payload: err.response.data.message,
-      //   })
+      dispatch({
+        type: constants.ORDER_ADD_FAILED,
+        payload: err.response.data.message,
+      })
+    })
+}
+
+export const getOrders = () => dispatch => {
+  dispatch({ type: constants.ORDER_GET_LOADING })
+  const token = window.sessionStorage.getItem("token")
+  axios
+    .get(api.order.get, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    .then(({ data }) => {
+      dispatch({ type: constants.ORDER_GET_SUCCESS, payload: data })
+    })
+    .catch(err => {
+      console.log(err)
+      dispatch({
+        type: constants.ORDER_GET_FAILED,
+      })
     })
 }
