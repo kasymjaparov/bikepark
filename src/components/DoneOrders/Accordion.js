@@ -1,4 +1,5 @@
 import { useState } from "react"
+import diff_hours from "../../utils/diffHours"
 import "./DoneOrders.css"
 
 export default function Accordion(props) {
@@ -18,7 +19,9 @@ export default function Accordion(props) {
         </div>
 
         <div className='accordion_header_date'>{props.date}</div>
-        <div className='accordion_header_price'>{props.price}</div>
+        <div className='accordion_header_price'>
+          {diff_hours(props.expiresAt, props.madeAt) * props.price} сом
+        </div>
       </div>
       {show && <div className='accordion_body'>{props.children}</div>}
     </div>

@@ -29,6 +29,19 @@ nav {
   text-decoration: none;
   color: inherit;
 }
+.header_authLinks-img {
+  margin-left: 19px;
+  cursor: pointer;
+}
+.popover-body a {
+  text-decoration: none;
+  color: inherit;
+}
+.popover-body span {
+  display: block;
+  margin: 13px 0px 0px 0px ;
+  cursor: pointer;
+}
 .header__links-item:hover {
   color: #297fff;
 }
@@ -150,7 +163,8 @@ nav {
     font-size: 18px;
     color: #297fff;
   }
-  .header__authLinks img {
+  .header__authLinks img,
+  .header_authLinks-img {
     display: none;
   }
 }

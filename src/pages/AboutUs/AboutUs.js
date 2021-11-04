@@ -7,7 +7,7 @@ export default function AboutUs() {
   var carouselItems = []
   for (var i = 0; i < 3; i++) {
     carouselItems.push(
-      <Carousel.Item interval={600000}>
+      <Carousel.Item key={i} interval={600000}>
         <div className='aboutUs-carousel_block'>
           <div className='aboutUs-carousel_block_item'>
             <div className='aboutUs-carousel_block_item_text'>

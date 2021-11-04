@@ -2,16 +2,19 @@ import "./Application.css"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { useSelector, useDispatch } from "react-redux"
 import { Formik } from "formik"
-
 import { addOrder } from "../../store/actions/order"
-import diff_days from "../../utils/DiffDays"
+import diffHours from "../../utils/diffHours"
 import sum from "../../utils/Sum"
 import validationSchema from "../../utils/ValidSchemaApplication"
+import { useEffect } from "react"
 
 export default function Application(props) {
   const dispatch = useDispatch()
   const bikes = useSelector(state => state.bikes.choosenBikes)
   const order = useSelector(state => state.bikes.choosenBikes)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const onSubmit = (data, { resetForm }) => {
     const newBikes = bikes.map(item => {
       return {
@@ -103,7 +106,7 @@ export default function Application(props) {
                         name='madeAt'
                         className='auth_input'
                         placeholder='Дата начала*'
-                        type='date'
+                        type='datetime-local'
                         value={values.madeAt}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -119,7 +122,7 @@ export default function Application(props) {
                         name='expiresAt'
                         className='auth_input'
                         placeholder='Дата начала*'
-                        type='date'
+                        type='datetime-local'
                         value={values.expiresAt}
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -173,7 +176,7 @@ export default function Application(props) {
                     )}
                   </div>
                 </div>
-                <div className='auth_label'>*Тарификация считается по дням</div>
+                <div className='auth_label'>*Тарификация почасовая</div>
               </div>
             </div>
             <div className='delivery block-prefix rent_bikes choosenBikes'>
@@ -201,10 +204,10 @@ export default function Application(props) {
                   <div className='choosenBikes_block_row_prices'>
                     <div className='choosenBikes_block_row_prices_hours'>
                       <div className='choosenBikes_block_row_prices_title'>
-                        Дни:
+                        Часы:
                       </div>
                       <div className='choosenBikes_block_row_prices_value'>
-                        {diff_days(values.expiresAt, values.madeAt)}
+                        {diffHours(values.expiresAt, values.madeAt)}
                       </div>
                     </div>
                     <div className='choosenBikes_block_row_prices_price'>

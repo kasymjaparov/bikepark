@@ -44,6 +44,30 @@
 .accordion_header_number {
   margin-left: 10px;
 }
+.accordion_body .doneOrders_header_item {
+  width: 25%;
+}
+.accordion_body_bikes {
+  margin: 10px 0px 0px 0px;
+}
+.accordion_body_bikes .accordion_body_bikes_item {
+  width: 25%;
+}
+.accordion_body_bikes .accordion_body_bikes_item:nth-child(2) {
+  text-align: center;
+}
+
+.accordion_body_bikes .accordion_body_bikes_item:nth-child(3) {
+  text-align: center;
+}
+.accordion_body_bikes .accordion_body_bikes_item:nth-child(4) {
+  text-align: right;
+}
+
+.accordion_body .doneOrders_header_item:nth-child(3) {
+  text-align: center;
+}
+
 .doneOrders_header {
   display: flex;
   justify-content: space-between;
@@ -69,23 +93,12 @@
 .doneOrders_header_item:nth-child(4) {
   text-align: right;
 }
-.accordion_body .doneOrders_header_item{
-  width: 25%;
+.doneOrders_footer {
+  margin: 20px 0;
 }
-.accordion_body_bikes .accordion_body_bikes_item {
-  width: 25%;
-}
-.accordion_body_bikes .accordion_body_bikes_item:nth-child(2) {
-  text-align: center;
-}
-
-.accordion_body_bikes .accordion_body_bikes_item:nth-child(3) {
-  text-align: center;
-}
-.accordion_body_bikes .accordion_body_bikes_item:nth-child(4) {
-  text-align: right;
-}
-
-.accordion_body .doneOrders_header_item:nth-child(3) {
-  text-align: center;
+.doneOrders_footer_item {
+  font-size: 16px;
+  line-height: 20px;
+  color: #14233d;
+  margin: 0px 0px 14px 0px ;
 }

@@ -8,6 +8,7 @@ export default function RentBikes() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(clearBikes())
+    window.scrollTo(0, 0)
   }, [])
   return (
     <div className='rent_bikes_row'>
@@ -43,7 +44,13 @@ export default function RentBikes() {
               </div>
             )
           ) : (
-            <div className='auth_label'>Арендован до 26.11.2021</div>
+            <div className='auth_label'>
+              {`Арендован до ${new Date(item.rentedUntil).toLocaleDateString()} ${new Date(
+                item.rentedUntil
+              )
+                .toLocaleTimeString()
+                .substring(0, 5)}` || ""}
+            </div>
           )}
         </div>
       ))}
