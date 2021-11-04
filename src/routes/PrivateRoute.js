@@ -7,6 +7,7 @@ import NoPage from "../pages/404/404"
 import AboutUs from "../pages/AboutUs/AboutUs"
 import Rent from "../pages/Rent/Rent"
 import Application from "../pages/Application/Application"
+import ExtendOrder from "../pages/ExtendOrder/ExtendOrder"
 
 export default function PrivateRoute() {
   const privateRoutes = [
@@ -17,6 +18,7 @@ export default function PrivateRoute() {
     { path: "/contacts", component: Contacts, exact: true },
     { path: "/aboutus", component: AboutUs, exact: true },
     { path: "/application", component: Application, exact: true },
+    { path: "/extend", component: ExtendOrder, exact: true },
   ]
   return (
     <Switch>

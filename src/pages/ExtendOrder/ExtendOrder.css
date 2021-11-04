@@ -1,0 +1,10 @@
+.extend_row_item {
+  margin: 40px 0px 0px 0px;
+  width: 240px;
+}
+.extend_row_item:nth-child(1) {
+  margin: 0px 40px 0px 0px;
+}
+.extend .choosenBikes_item_price {
+  margin: 15px 0px 30px 0px;
+}

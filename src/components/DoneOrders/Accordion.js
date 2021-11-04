@@ -15,7 +15,7 @@ export default function Accordion(props) {
                 : `accordion_header_arrow accordion_header_arrow-down`
             }
           />
-          <div className='accordion_header_number'>{props.number}</div>
+          <div className='accordion_header_number'>№ {props.number}</div>
         </div>
 
         <div className='accordion_header_date'>{props.date}</div>

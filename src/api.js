@@ -14,6 +14,8 @@ const api = {
   order: {
     add: `${root}/order/new`,
     get: `${root}/order/getUsersOrders`,
+    delete: `${root}/order/cancel`,
+    extend: `${root}/order/extend`,
   },
 }
 export default api

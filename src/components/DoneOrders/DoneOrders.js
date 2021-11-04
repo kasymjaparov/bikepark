@@ -75,9 +75,6 @@ export default function DoneOrders() {
                 <div className='doneOrders_footer_item'>
                   Тип оплаты: на месте
                 </div>
-                <div className='doneOrders_footer_item'>
-                  Адрес: Чуй 6 проспект
-                </div>
               </div>
             </div>
           </Accordion>

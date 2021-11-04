@@ -1,7 +1,7 @@
 import "./Lk.css"
 import { NavLink } from "react-router-dom"
 import { Route } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import CurrentOrders from "../../components/CurrentOrders/CurrentOrders"
 import DoneOrders from "../../components/DoneOrders/DoneOrders"
 import UserInfo from "../../components/UserInfo/UserInfo"
@@ -9,10 +9,11 @@ import { getOrders } from "../../store/actions/order"
 import { useEffect } from "react"
 
 export default function Lk() {
+  const getOrder = useSelector(state => state.order.deleteOrder)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getOrders())
-  }, [])
+  }, [getOrder])
   return (
     <div className='lk delivery'>
       <div className='lk_block delivery_block'>

@@ -40,6 +40,7 @@ const Header = () => {
   const logoutFromApp = () => {
     dispatch(logout())
   }
+
   return (
     <div className={"header"}>
       <div className={"header__title"}>
@@ -61,7 +62,6 @@ const Header = () => {
               </NavLink>
             ))}
           </div>
-
           <OverlayTrigger
             target={target.current}
             show={showTooltip}
@@ -77,9 +77,18 @@ const Header = () => {
                       <span onClick={logoutFromApp}>Выйти</span>
                     </div>
                   ) : (
-                    <NavLink onClick={() => setShowTooltip(false)} to='/auth'>
-                      Войти
-                    </NavLink>
+                    <>
+                      <NavLink
+                        onClick={() => setShowTooltip(false)}
+                        to='/auth/registr'
+                      >
+                        Регистрация
+                      </NavLink>
+                      <br />
+                      <NavLink onClick={() => setShowTooltip(false)} to='/auth'>
+                        Войти
+                      </NavLink>
+                    </>
                   )}
                 </Popover.Body>
               </Popover>
@@ -92,7 +101,6 @@ const Header = () => {
               alt='login'
             />
           </OverlayTrigger>
-
           <NavLink
             onClick={() => changeOverflow()}
             to={success ? "/lk" : "/auth"}
@@ -100,6 +108,14 @@ const Header = () => {
           >
             <span>Личный кабинет</span>
           </NavLink>
+          {success && (
+            <div
+              onClick={logoutFromApp}
+              className='header_logout header__authLinks'
+            >
+              Выйти
+            </div>
+          )}
         </nav>
       )}
       <div className='header_date_burger'>

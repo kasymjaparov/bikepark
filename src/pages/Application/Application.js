@@ -1,12 +1,12 @@
-import "./Application.css"
+import { useEffect } from "react"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { useSelector, useDispatch } from "react-redux"
 import { Formik } from "formik"
-import { addOrder } from "../../store/actions/order"
+import { addOrder, getOrders } from "../../store/actions/order"
+import "./Application.css"
 import diffHours from "../../utils/diffHours"
 import sum from "../../utils/Sum"
 import validationSchema from "../../utils/ValidSchemaApplication"
-import { useEffect } from "react"
 
 export default function Application(props) {
   const dispatch = useDispatch()
@@ -32,6 +32,7 @@ export default function Application(props) {
       )
     )
     resetForm({})
+    dispatch(getOrders())
   }
 
   return (

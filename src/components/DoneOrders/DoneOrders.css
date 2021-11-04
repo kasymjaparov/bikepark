@@ -93,12 +93,41 @@
 .doneOrders_header_item:nth-child(4) {
   text-align: right;
 }
-.doneOrders_footer {
-  margin: 20px 0;
-}
 .doneOrders_footer_item {
   font-size: 16px;
   line-height: 20px;
   color: #14233d;
-  margin: 0px 0px 14px 0px ;
+  margin: 0px 0px 14px 0px;
+}
+.doneOrders_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.doneOrders_footer {
+  margin: 20px 0;
+}
+.doneOrders_buttons button:nth-child(1) {
+  margin: 0px 40px 0px 0px;
+}
+@media (max-width: 720px) {
+  .accordion_body_bikes_item,
+  .doneOrders_footer_item {
+    font-size: 14px;
+  }
+}
+@media (max-width: 440px) {
+  .doneOrders_buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .doneOrders_buttons button{
+    width: 100%;
+  }
+  .doneOrders_buttons button:nth-child(1) {
+    margin: 0px 0px 20px 0px;
+  }
 }
