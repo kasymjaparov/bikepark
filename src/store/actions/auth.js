@@ -79,3 +79,11 @@ export const verification = (token, history) => dispatch => {
       })
     })
 }
+
+export const logout = () => dispatch => {
+  dispatch({
+    type: constants.LOGOUT_SUCCESS,
+  })
+  window.sessionStorage.removeItem("token")
+  document.location.replace("/")
+}

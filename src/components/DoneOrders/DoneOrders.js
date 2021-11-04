@@ -8,12 +8,19 @@ export default function DoneOrders() {
   const ordersState = useSelector(state => state.order.getOrders)
   return (
     <div className='doneOrders'>
-      <div className='doneOrders_header'>
-        <div className='doneOrders_header_item'>Номер заказа</div>
-        <div className='doneOrders_header_item'>Дата</div>
-        <div className='doneOrders_header_item'>Стоимость</div>
-      </div>
+      {ordersState.success && ordersState.orders.completedOrders.length > 0 && (
+        <div className='doneOrders_header'>
+          <div className='doneOrders_header_item'>Номер заказа</div>
+          <div className='doneOrders_header_item'>Дата</div>
+          <div className='doneOrders_header_item'>Стоимость</div>
+        </div>
+      )}
+
       {ordersState.loading && <Loading />}
+      {ordersState.success &&
+        ordersState.orders.completedOrders.length == 0 && (
+          <div>Выполненных заказов нет</div>
+        )}
       {ordersState.success &&
         ordersState.orders.completedOrders.map(order => (
           <Accordion

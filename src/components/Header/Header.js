@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { OverlayTrigger, Popover } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 import "./Header.css"
 import logo from "../../assets/icons/logo.svg"
 import login from "../../assets/icons/user.svg"
-import { NavLink } from "react-router-dom"
-import { OverlayTrigger, Popover, Tooltip } from "react-bootstrap"
+import { logout } from "../../store/actions/auth"
 
 const Header = () => {
+  const dispatch = useDispatch()
   const links = [
     { href: "/aboutus", text: "О нас" },
     { href: "/", text: "Аренда" },
@@ -15,11 +17,11 @@ const Header = () => {
     { href: "/contacts", text: "Контакты" },
   ]
   const [showTooltip, setShowTooltip] = useState(false)
+  const [show, setShow] = React.useState(true)
   const target = useRef(null)
   const success =
     useSelector(state => state.auth.login.success) ||
     window.sessionStorage.getItem("token")
-  const [show, setShow] = React.useState(true)
   useEffect(() => {
     if (window.matchMedia("(max-width:650px)").matches) {
       setShow(false)
@@ -36,7 +38,7 @@ const Header = () => {
     }
   }
   const logoutFromApp = () => {
-    console.log("logout")
+    dispatch(logout())
   }
   return (
     <div className={"header"}>
@@ -67,10 +69,18 @@ const Header = () => {
             overlay={
               <Popover>
                 <Popover.Body>
-                  <NavLink onClick={() => setShowTooltip(false)} to='/lk'>
-                    Личный кабинет
-                  </NavLink>
-                  <span onClick={logoutFromApp}>Выйти</span>
+                  {success ? (
+                    <div>
+                      <NavLink onClick={() => setShowTooltip(false)} to='/lk'>
+                        Личный кабинет
+                      </NavLink>
+                      <span onClick={logoutFromApp}>Выйти</span>
+                    </div>
+                  ) : (
+                    <NavLink onClick={() => setShowTooltip(false)} to='/auth'>
+                      Войти
+                    </NavLink>
+                  )}
                 </Popover.Body>
               </Popover>
             }

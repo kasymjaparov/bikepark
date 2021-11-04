@@ -101,6 +101,8 @@ const reducer = (state = initialState, action) => {
           message: action.payload,
         },
       }
+    case constants.LOGIN_SUCCESS:
+      return state
     default:
       return state
   }
