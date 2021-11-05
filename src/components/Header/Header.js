@@ -9,6 +9,9 @@ import { logout } from "../../store/actions/auth"
 
 const Header = () => {
   const dispatch = useDispatch()
+  const date = new Date()
+  const seconds = date.getSeconds()
+  const milliseconds = (60 - seconds) * 1000
   const links = [
     { href: "/aboutus", text: "О нас" },
     { href: "/", text: "Аренда" },
@@ -16,12 +19,18 @@ const Header = () => {
     { href: "/info", text: "Где кататься" },
     { href: "/contacts", text: "Контакты" },
   ]
+  const [changeTime, setChangeTime] = useState(date)
   const [showTooltip, setShowTooltip] = useState(false)
   const [show, setShow] = React.useState(true)
   const target = useRef(null)
   const success =
     useSelector(state => state.auth.login.success) ||
     window.sessionStorage.getItem("token")
+  useEffect(() => {
+    setTimeout(() => {
+      setChangeTime(new Date())
+    }, milliseconds)
+  }, [changeTime])
   useEffect(() => {
     if (window.matchMedia("(max-width:650px)").matches) {
       setShow(false)
@@ -120,7 +129,13 @@ const Header = () => {
       )}
       <div className='header_date_burger'>
         <div className={"header__date"}>
-          {new Date().toLocaleTimeString().substring(0, 5)}
+          {changeTime.getHours() < 10
+            ? `0${changeTime.getHours()}`
+            : changeTime.getHours()}
+          :
+          {changeTime.getMinutes() < 10
+            ? `0${changeTime.getMinutes()}`
+            : changeTime.getMinutes()}
         </div>
         <div
           onClick={() => changeOverflow()}

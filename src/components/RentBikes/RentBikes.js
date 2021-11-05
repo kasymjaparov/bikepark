@@ -6,10 +6,10 @@ export default function RentBikes() {
   const allBikesState = useSelector(state => state.bikes.allBikes)
   const bikesState = useSelector(state => state.bikes.choosenBikes)
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(clearBikes())
-    window.scrollTo(0, 0)
-  }, [])
+  // useEffect(() => {
+  //   dispatch(clearBikes())
+  //   window.scrollTo(0, 0)
+  // }, [])
   return (
     <div className='rent_bikes_row'>
       {allBikesState.bikes.map((item, index) => (
