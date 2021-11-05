@@ -6,10 +6,9 @@ export default function RentBikes() {
   const allBikesState = useSelector(state => state.bikes.allBikes)
   const bikesState = useSelector(state => state.bikes.choosenBikes)
   const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(clearBikes())
-  //   window.scrollTo(0, 0)
-  // }, [])
+  useEffect(() => {
+    dispatch(clearBikes())
+  }, [])
   return (
     <div className='rent_bikes_row'>
       {allBikesState.bikes.map((item, index) => (
@@ -45,9 +44,9 @@ export default function RentBikes() {
             )
           ) : (
             <div className='auth_label'>
-              {`Арендован до ${new Date(item.rentedUntil).toLocaleDateString()} ${new Date(
+              {`Арендован до ${new Date(
                 item.rentedUntil
-              )
+              ).toLocaleDateString()} ${new Date(item.rentedUntil)
                 .toLocaleTimeString()
                 .substring(0, 5)}` || ""}
             </div>
