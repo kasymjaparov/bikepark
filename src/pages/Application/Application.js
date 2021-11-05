@@ -34,7 +34,7 @@ export default function Application(props) {
     resetForm({})
     dispatch(getOrders())
   }
-
+  console.log(new Date().toISOString().substring(0, 16))
   return (
     <div className='application'>
       <Formik
@@ -110,6 +110,7 @@ export default function Application(props) {
                         type='datetime-local'
                         value={values.madeAt}
                         onChange={handleChange}
+                        min={new Date().toISOString().substring(0, 16)}
                         onBlur={handleBlur}
                         isInvalid={touched.madeAt && errors.madeAt}
                       />
@@ -122,9 +123,10 @@ export default function Application(props) {
                       <FormControl
                         name='expiresAt'
                         className='auth_input'
-                        placeholder='Дата начала*'
+                        placeholder='Дата окончания*'
                         type='datetime-local'
                         value={values.expiresAt}
+                        min={new Date().toISOString().substring(0, 16)}
                         onChange={handleChange}
                         onBlur={handleBlur}
                         isInvalid={touched.expiresAt && errors.expiresAt}
