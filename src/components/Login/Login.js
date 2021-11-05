@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "../../pages/Auth/Auth.css"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { Formik } from "formik"
@@ -8,6 +8,9 @@ import { login } from "../../store/actions/auth"
 import { useHistory } from "react-router-dom"
 
 export default function Login(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const dispatch = useDispatch()
   const [show, setShow] = React.useState(false)
   let history = useHistory()

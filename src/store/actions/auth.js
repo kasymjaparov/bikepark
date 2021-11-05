@@ -13,7 +13,7 @@ export const login = (userdata, history) => dispatch => {
       dispatch({ type: constants.LOGIN_SUCCESS, payload: data })
     })
     .then(() => {
-      history.push("/lk")
+      history.goBack()
     })
     .then(() => {
       store.addNotification({

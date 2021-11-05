@@ -152,7 +152,6 @@ nav {
   .header_logout {
     display: block;
     font-size: 24px;
-    color: #297fff;
     margin: 10px 0px 0px 0px;
   }
   .header__links-item {
@@ -170,7 +169,7 @@ nav {
   .header__authLinks span {
     display: inline;
     font-size: 24px;
-    color: #297fff;
+    color: black;
   }
   .header__authLinks img,
   .header_authLinks-img {

@@ -52,9 +52,9 @@ const Header = () => {
 
   return (
     <div className={"header"}>
-      <div className={"header__title"}>
+      <NavLink to='/' className={"header__title"}>
         <img src={logo} alt='logo bike park' />{" "}
-      </div>
+      </NavLink>
       {show && (
         <nav>
           <div className='header__links'>
