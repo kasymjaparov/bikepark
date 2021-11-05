@@ -114,7 +114,7 @@ export default function Login() {
                 type={!show ? "password" : "text"}
                 autoComplete='on'
               />
-              <div className="auth_password_eye">
+              <div className='auth_password_eye'>
                 <i
                   onClick={() => setShow(!show)}
                   className={!show ? "fas fa-eye" : "fas fa-eye-slash"}

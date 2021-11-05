@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { getAll } from "../../store/actions/bikes"
 import { useEffect } from "react"
 import RentBikes from "../../components/RentBikes/RentBikes"
-import Loading from "../../components/Loading/Loading"
 import { Button } from "react-bootstrap"
+import SkeletonBike from "../../components/SkeletonBike/SkeletonBike"
 
 export default function Rent(props) {
   const dispatch = useDispatch()
@@ -23,7 +23,7 @@ export default function Rent(props) {
       <div className='delivery block-prefix rent_bikes'>
         <div className='delivery_block'>
           <RentFilters />
-          {loading && <Loading />}
+          {loading && <SkeletonBike />}
           {success && <RentBikes />}
           {success && (
             <Button

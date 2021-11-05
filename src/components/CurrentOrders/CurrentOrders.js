@@ -4,6 +4,7 @@ import Accordion from "../DoneOrders/Accordion"
 import Loading from "../Loading/Loading"
 import diffHours from "../../utils/diffHours"
 import { deleteOrder } from "../../store/actions/order"
+import SkeletonOrders from "../SkeletonOrders/SkeletonOrders"
 
 export default function DoneOrders(props) {
   const ordersState = useSelector(state => state.order.getOrders)
@@ -29,7 +30,7 @@ export default function DoneOrders(props) {
         </div>
       )}
 
-      {ordersState.loading && <Loading />}
+      {ordersState.loading && <SkeletonOrders />}
       {ordersState.success && ordersState.orders.currentOrders.length == 0 && (
         <div>Текущих заказов нет</div>
       )}

@@ -52,7 +52,11 @@ const Header = () => {
 
   return (
     <div className={"header"}>
-      <NavLink to='/' className={"header__title"}>
+      <NavLink
+        onClick={() => changeOverflow()}
+        to='/'
+        className={"header__title"}
+      >
         <img src={logo} alt='logo bike park' />{" "}
       </NavLink>
       {show && (
