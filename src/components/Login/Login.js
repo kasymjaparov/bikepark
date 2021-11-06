@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { Formik } from "formik"
 import { useHistory } from "react-router-dom"
@@ -12,7 +12,7 @@ export default function Login(props) {
     window.scrollTo(0, 0)
   }, [])
   const dispatch = useDispatch()
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = useState(false)
   let history = useHistory()
   const validationSchema = yup.object().shape({
     email: yup
