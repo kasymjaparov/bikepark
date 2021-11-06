@@ -18,6 +18,7 @@ export const getAll = () => dispatch => {
 }
 
 export const getFiltered = params => dispatch => {
+  console.log(params)
   dispatch({ type: constants.GET_FILTERED_BIKES_LOADING })
   axios
     .get(

@@ -20,6 +20,7 @@ export default function RentFilters() {
     fetch(api.bikes.getFilters)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         setFilters(data)
       })
   }, [])
@@ -78,7 +79,7 @@ export default function RentFilters() {
         <span className='auth_label rent_bikes_label'>Статус</span>
         <Form.Select
           onChange={e => {
-            setParams({ ...params, wheelsSize: e.target.value })
+            setParams({ ...params, isRented: e.target.value })
             dispatch(getFiltered({ ...params, isRented: e.target.value }))
           }}
         >
