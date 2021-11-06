@@ -53,7 +53,6 @@ const Header = () => {
   return (
     <div className={"header"}>
       <NavLink
-        onClick={() => changeOverflow()}
         to='/'
         className={"header__title"}
       >
