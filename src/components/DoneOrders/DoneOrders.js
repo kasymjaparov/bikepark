@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux"
 import "./DoneOrders"
 import Accordion from "./Accordion"
-import Loading from "../../components/Loading/Loading"
 import diffHours from "../../utils/diffHours"
 import SkeletonOrders from "../SkeletonOrders/SkeletonOrders"
 

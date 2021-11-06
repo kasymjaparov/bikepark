@@ -10,7 +10,6 @@ const Footer = () => {
           <h1 className='footer_title'>Аренда велосипедов</h1>
           <div className='footer_nav'>
             <div className='footer_nav_item'>Правила</div>
-            <div className='footer_nav_item'>Отзывы</div>
             <div className='footer_nav_item'>Контакты</div>
             <div className='footer_nav_item'>Обратная связь</div>
           </div>

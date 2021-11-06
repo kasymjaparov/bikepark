@@ -5,9 +5,12 @@ import "react-loading-skeleton/dist/skeleton.css"
 export default function SkeletonOrders() {
   return (
     <div className='skeletonOrders'>
-      <Skeleton className='skeletonOrders_item' width='100%' height='62px' />
-      <Skeleton className='skeletonOrders_item' width='100%' height='62px' />
-      <Skeleton className='skeletonOrders_item' width='100%' height='62px' />
+      <Skeleton
+        className='skeletonOrders_item'
+        width='100%'
+        height='62px'
+        count={3}
+      />
     </div>
   )
 }

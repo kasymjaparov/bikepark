@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
-import "../../pages/Auth/Auth.css"
+import { useEffect } from "react"
 import { InputGroup, FormControl, Button } from "react-bootstrap"
 import { Formik } from "formik"
-import * as yup from "yup"
-import { useDispatch } from "react-redux"
-import { login } from "../../store/actions/auth"
 import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import * as yup from "yup"
+import "../../pages/Auth/Auth.css"
+import { login } from "../../store/actions/auth"
 
 export default function Login(props) {
   useEffect(() => {

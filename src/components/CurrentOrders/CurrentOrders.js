@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import { Button } from "react-bootstrap"
 import Accordion from "../DoneOrders/Accordion"
-import Loading from "../Loading/Loading"
 import diffHours from "../../utils/diffHours"
 import { deleteOrder } from "../../store/actions/order"
 import SkeletonOrders from "../SkeletonOrders/SkeletonOrders"
