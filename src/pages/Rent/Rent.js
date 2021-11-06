@@ -25,7 +25,7 @@ export default function Rent(props) {
           <RentFilters />
           {loading && <SkeletonBike />}
           {success && <RentBikes />}
-          {success && (
+          {success && !bikes.length == 0 && (
             <Button
               disabled={!choosenBikes.length}
               className='rent_bikes_button'
