@@ -1,3 +1,4 @@
+import React from "react"
 import "../../pages/Auth/Auth.css"
 import { Formik } from "formik"
 import * as yup from "yup"
