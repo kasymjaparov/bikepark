@@ -94,6 +94,7 @@ export default function Login() {
                 onBlur={handleBlur}
                 isInvalid={touched.email && errors.email}
                 name='email'
+                type='email'
                 className='auth_input'
                 placeholder='Введите E-mail'
               />

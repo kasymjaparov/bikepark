@@ -20,7 +20,6 @@ export default function RentFilters() {
     fetch(api.bikes.getFilters)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         setFilters(data)
       })
   }, [])

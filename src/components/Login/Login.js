@@ -50,13 +50,14 @@ export default function Login(props) {
           dirty,
         }) => (
           <form>
-            <span className='auth_label'>Номер телефона*</span>
+            <span className='auth_label'>E-mail*</span>
             <InputGroup>
               <FormControl
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 name='email'
+                type='email'
                 className='auth_input'
                 isInvalid={touched.email && errors.email}
                 placeholder='Введите email'

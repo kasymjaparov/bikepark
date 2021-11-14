@@ -13,7 +13,6 @@ export const addOrder = (order, history) => dispatch => {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then(({ data }) => {
-      console.log(data)
       dispatch({ type: constants.ORDER_ADD_SUCCESS })
     })
     .then(() => {
@@ -84,7 +83,6 @@ export const extendOrder = (data, history) => dispatch => {
       headers: { Authorization: `Bearer ${token}` },
     })
     .then(({ data }) => {
-      console.log(data)
       dispatch({ type: constants.ORDER_EXTEND_SUCCESS })
     })
     .then(() => history.push("/lk"))

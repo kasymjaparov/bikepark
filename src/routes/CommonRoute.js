@@ -4,7 +4,6 @@ import Delivery from "../pages/Delivery/Delivery"
 import Info from "../pages/Info/Info"
 import Contacts from "../pages/Contacts/Contacts"
 import Verification from "../pages/Verification/Verification"
-import NoPage from "../pages/404/404"
 import AboutUs from "../pages/AboutUs/AboutUs"
 import Rent from "../pages/Rent/Rent"
 

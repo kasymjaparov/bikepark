@@ -34,7 +34,6 @@ export default function Application(props) {
     resetForm({})
     dispatch(getOrders())
   }
-  console.log(new Date().toISOString().substring(0, 16))
   return (
     <div className='application'>
       <Formik
@@ -90,6 +89,7 @@ export default function Application(props) {
                         name='phone'
                         className='auth_input'
                         placeholder='Номер телефона*'
+                        type='tel'
                         value={values.phone}
                         onChange={handleChange}
                         onBlur={handleBlur}

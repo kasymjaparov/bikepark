@@ -12,7 +12,7 @@ export default function ExtendOrder(props) {
   const validationSchema = yup.object().shape({
     dateEnd: yup.string().required("Обязательное поле"),
   })
-  console.log(new Date(order.minDate).toISOString())
+
   const onSubmit = (data, { resetForm }) => {
     dispatch(
       extendOrder(
