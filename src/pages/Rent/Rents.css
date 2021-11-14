@@ -1,0 +1,251 @@
+.rent_header_block {
+  display: flex;
+}
+.rent_header_title {
+  width: 50%;
+}
+.rent_header_free {
+  display: flex;
+  width: 50%;
+}
+.rent_header_free_item {
+  width: 300px;
+  border-radius: 10px;
+}
+.rent_header_free_item:nth-child(1) {
+  background: #d7e6ff;
+  margin-right: -120px;
+}
+.rent_header_free_item:nth-child(2) {
+  margin-right: -120px;
+  background: #b9d5ff;
+}
+.rent_header_free_item:nth-child(3) {
+  width: 180px;
+  background: #a5c7fa;
+}
+.rent_header_free_item {
+  position: relative;
+}
+.rent_header_free_item_info {
+  position: absolute;
+  bottom: 10px;
+}
+.rent_header_free_item_info_title {
+  font-size: 18px;
+  line-height: 22px;
+  color: #14233d;
+}
+.rent_header_free_item_info_subtitle {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  color: #297fff;
+}
+.rent_header_free_item_group {
+  padding: 0px 20px 20px 20px;
+}
+.rent_header_free_item_group img {
+  width: 150px;
+}
+.rent_bikes {
+  margin-top: 34px;
+  position: relative;
+}
+.block-prefix::before {
+  content: "";
+  width: 77px;
+  height: 34px;
+  background: url("../../assets/images/preimage.png");
+  position: absolute;
+  top: -34px;
+  left: 50px;
+}
+.rent_bikes_filters {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.rent_bikes_label {
+  margin: 0px 0px 15px 0px;
+}
+.rent_bikes_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px 0px 0px 0px;
+}
+.rent_bikes_row_item {
+  width: 260px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 0px 0px 40px 0px;
+}
+
+.rent_bikes_row_item_header {
+  display: flex;
+  justify-content: space-between;
+}
+.rent_bikes_row_item_header_size {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  color: #abb1c5;
+}
+.rent_bikes_row_item_header_brand {
+  font-size: 18px;
+  line-height: 22px;
+  color: #abb1c5;
+}
+.rent_bikes_row_item_image {
+  margin: 15px 0;
+  width: 230px;
+}
+.rent_bikes_row_item_image img {
+  max-width: 100%;
+}
+.rent_bikes_row_item_title {
+  font-size: 18px;
+  line-height: 22px;
+  color: #14233d;
+}
+.rent_bikes_row_item_price {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 22px;
+  color: #297fff;
+  margin: 15px 0 11px 0;
+}
+.rent_bikes_row_item_btn {
+  width: 100%;
+  padding: 9px 0px;
+  background: #297fff;
+  color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.rent_bikes_row_item_btn-choosen {
+  border: 1px solid #297fff;
+  color: #297fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  padding: 9px 0px;
+  cursor: pointer;
+}
+.rent_bikes_button {
+  width: 260px;
+  display: block;
+  height: 60px;
+  border-radius: 10px;
+  margin: 0 auto 0 auto;
+}
+@media (max-width: 1100px) {
+  .rent_header_block {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rent_header_title {
+    width: 100%;
+  }
+  .rent_header_free {
+    width: auto;
+  }
+  .rent_header_title {
+    font-size: 36px;
+    text-align: center;
+    margin: 0px 0px 25px 0px;
+  }
+}
+@media (max-width: 950px) {
+  .rent_bikes_row_item_header_size {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .rent_bikes_row_item_header_brand {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .rent_bikes_row_item_title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .rent_bikes_row_item_price {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .rent_bikes_row_item_btn {
+  }
+}
+@media (max-width: 620px) {
+  .rent_header_free_item_info_title {
+    display: none;
+  }
+  .rent_header_free_item_group img {
+    width: 80px;
+  }
+  .rent_header_free_item_info_subtitle {
+    font-size: 13px;
+  }
+  .rent_header_free {
+    width: 100%;
+  }
+  .rent_header_free_item {
+    width: 40%;
+    height: 90px;
+    border-radius: 10px;
+  }
+  .rent_header_free_item:nth-child(1) {
+    background: #d7e6ff;
+    margin-right: -20px;
+  }
+  .rent_header_free_item:nth-child(2) {
+    margin-right: -20px;
+    background: #b9d5ff;
+  }
+  .rent_header_free_item:nth-child(3) {
+    width: calc(40% - 20px);
+    background: #a5c7fa;
+  }
+  .rent_header_free_item_group {
+    padding: 0 0 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .rent_header_free_item_info {
+    bottom: 0;
+  }
+  .rent_header_title {
+    font-size: 32px;
+  }
+  .rent_bikes_filters {
+    display: flex;
+    flex-direction: column;
+  }
+  .rent_bikes_filters_item {
+    margin: 0px 0px 20px 0px;
+  }
+  .rent_bikes_label {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0px 0px 10px 0px;
+  }
+  .rent_bikes_filters select {
+    font-size: 16px;
+  }
+}
+@media (max-width: 590px) {
+  .rent_bikes_row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 350px) {
+  .rent_header_free_item_info_subtitle {
+    font-size: 10px;
+  }
+}

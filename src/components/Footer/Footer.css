@@ -1,0 +1,129 @@
+.footer {
+  margin: 300px 0px 0px 0px;
+  height: 344px;
+  background: #272934;
+  padding: 50px 0px 0px 0px;
+}
+.footer_nav {
+  display: flex;
+}
+.footer_row {
+  display: flex;
+  justify-content: space-between;
+}
+.footer_title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.footer_nav_item {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-left: 46px;
+}
+.footer_types {
+  margin: 26px 0px 0px 0px;
+}
+.footer_types_item {
+  font-size: 16px;
+  line-height: 150%;
+  color: #f2f4f7;
+}
+.footer_info {
+  margin: 44px 0px 0px 0px;
+  color: #f2f4f7;
+  display: flex;
+}
+.footer_info_links {
+  display: flex;
+  justify-content: space-between;
+}
+.footer_info_links_politic {
+  margin: 0px 450px 0px 44px;
+}
+.footer_info_links_item {
+  margin-left: 40px;
+  cursor: pointer;
+}
+@media (max-width: 966px) {
+  .footer {
+    margin: 100px 0px 0px 0px;
+    height: 314px;
+    padding: 39px 0px 0px 0px;
+  }
+  .footer_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .footer_nav_item {
+    font-size: 14px;
+    line-height: 150%;
+  }
+  .footer_types {
+    margin: 26px 0px 0px 0px;
+  }
+  .footer_types_item {
+    font-size: 14px;
+  }
+  .footer_info {
+    margin: 35px 0px 0px 0px;
+  }
+  .footer_info_links {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_info_links_politic {
+    margin: 0px 44px 0px 136px;
+  }
+  .footer_info_links_item {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 620px) {
+  .footer_row {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer_nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    margin: 90px 0px 0px 0px;
+    min-height: 350px;
+    padding: 39px 0px 0px 0px;
+  }
+  .footer_title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .footer_nav_item {
+    font-size: 14px;
+    margin: 0px 0px 0px 0px;
+    line-height: 150%;
+  }
+  .footer_types {
+    margin: 26px 0px 0px 0px;
+  }
+  .footer_types_item {
+    font-size: 14px;
+  }
+  .footer_info {
+    margin: 35px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer_info_links {
+    display: flex;
+    justify-content: start;
+  }
+  .footer_info_links_politic {
+    margin: 0px 0px 0px 0px;
+  }
+  .footer_info_links_item {
+    margin-left: 10px;
+  }
+}
