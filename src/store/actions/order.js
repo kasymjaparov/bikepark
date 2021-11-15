@@ -16,7 +16,7 @@ export const addOrder = (order, history) => dispatch => {
       dispatch({ type: constants.ORDER_ADD_SUCCESS })
     })
     .then(() => {
-      history.push("/")
+      history.push("/lk")
     })
     .then(() => {
       store.addNotification({

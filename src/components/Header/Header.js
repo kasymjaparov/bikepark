@@ -52,13 +52,7 @@ const Header = () => {
 
   return (
     <div className={"header"}>
-      <NavLink
-        onClick={() => setShow(false)}
-        to='/'
-        className={"header__title"}
-      >
-        <img src={logo} alt='logo bike park' />{" "}
-      </NavLink>
+      <img src={logo} alt='logo bike park' />
       {show && (
         <nav>
           <div className='header__links'>
