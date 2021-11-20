@@ -25,10 +25,11 @@ export default function Login() {
     password: yup
       .string()
       .required("Обязательное поле")
-      .min(9, "Минимальное количество символов 9"),
+      .min(9, "Минимальное количество символов 9")
+      .trim("Уберите пробел в конце"),
   })
   const onSubmit = (data, { resetForm }) => {
-    dispatch(registration(data))
+    dispatch(registration({ ...data, username: data.username.trim() }))
     resetForm({})
   }
   return (
@@ -112,14 +113,12 @@ export default function Login() {
                 isInvalid={touched.password && errors.password}
                 className='auth_input'
                 placeholder='Введите пароль'
+                autoComplete='off'
                 type={!show ? "password" : "text"}
                 autoComplete='on'
               />
-              <div className='auth_password_eye'>
-                <i
-                  onClick={() => setShow(!show)}
-                  className={!show ? "fas fa-eye" : "fas fa-eye-slash"}
-                ></i>
+              <div onClick={() => setShow(!show)} className='auth_password_eye'>
+                <i className={!show ? "fas fa-eye" : "fas fa-eye-slash"}></i>
               </div>
             </InputGroup>
             {touched.password && errors.password && (

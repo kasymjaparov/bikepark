@@ -12,6 +12,9 @@ export default function Lk() {
   const getOrder = useSelector(state => state.order.deleteOrder)
   const dispatch = useDispatch()
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  useEffect(() => {
     dispatch(getOrders())
   }, [getOrder])
   return (

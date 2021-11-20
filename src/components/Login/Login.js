@@ -74,16 +74,14 @@ export default function Login(props) {
                 onBlur={handleBlur}
                 isInvalid={touched.password && errors.password}
                 name='password'
+                autoComplete='off'
                 className='auth_input'
                 placeholder='Введите пароль'
                 type={!show ? "password" : "text"}
                 autoComplete='on'
               />
-              <div className='auth_password_eye'>
-                <i
-                  onClick={() => setShow(!show)}
-                  className={!show ? "fas fa-eye" : "fas fa-eye-slash"}
-                ></i>
+              <div onClick={() => setShow(!show)} className='auth_password_eye'>
+                <i className={!show ? "fas fa-eye" : "fas fa-eye-slash"}></i>
               </div>
             </InputGroup>
             {touched.password && errors.password && (

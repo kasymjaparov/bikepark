@@ -20,9 +20,9 @@ export default function Verification() {
     }
   })
 
-  React.useEffect(() => {
-    dispatch(verification(token, history))
-  }, [])
+  // React.useEffect(() => {
+  //   dispatch(verification(token, history))
+  // }, [])
 
   return (
     <div className='verification'>

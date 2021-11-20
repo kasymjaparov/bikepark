@@ -39,7 +39,6 @@ export const registration = userdata => dispatch => {
   axios
     .post(api.auth.registration, userdata)
     .then(({ data }) => {
-      console.log(data)
       dispatch({ type: constants.REGISTRATION_SUCCESS, payload: data.message })
     })
     .then(() => {
