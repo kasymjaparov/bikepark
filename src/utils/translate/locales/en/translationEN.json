@@ -1,0 +1,16 @@
+{
+  "main/header_title": "Bike rental with delivery",
+
+  "info/title": "Where to ride",
+  "info/subtitle": "Подзаголовок",
+
+  "header/nav_aboutus": "About us",
+  "header/nav_rent": "Rent",
+  "header/nav_delivery": "Delivery",
+  "header/nav_wheredrive": "Where to ride",
+  "header/nav_contacts": "Contacts",
+  "header/nav_lk": "Personal area",
+  "header/nav_logout": "Logout",
+  "header/nav_reg": "Registration",
+  "header/nav_login": "Login"
+}

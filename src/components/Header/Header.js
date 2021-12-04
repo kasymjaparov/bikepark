@@ -2,26 +2,29 @@ import React, { useEffect, useRef, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { OverlayTrigger, Popover } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import "./Header.css"
 import logo from "../../assets/icons/logo.svg"
 import login from "../../assets/icons/user.svg"
 import { logout } from "../../store/actions/auth"
 
 const Header = () => {
+  const { t, i18n } = useTranslation()
   const dispatch = useDispatch()
   const date = new Date()
   const seconds = date.getSeconds()
   const milliseconds = (60 - seconds) * 1000
   const links = [
-    { href: "/aboutus", text: "О нас" },
-    { href: "/", text: "Аренда" },
-    { href: "/delivery", text: "Доставка" },
-    { href: "/info", text: "Где кататься" },
-    { href: "/contacts", text: "Контакты" },
+    { href: "/aboutus", text: t("header/nav_aboutus") },
+    { href: "/", text: t("header/nav_rent") },
+    { href: "/delivery", text: t("header/nav_delivery") },
+    { href: "/info", text: t("header/nav_wheredrive") },
+    { href: "/contacts", text: t("header/nav_contacts") },
   ]
   const [changeTime, setChangeTime] = useState(date)
   const [showTooltip, setShowTooltip] = useState(false)
   const [show, setShow] = React.useState(true)
+  const [language, setLanguage] = useState(localStorage.getItem("lang") || "ru")
   const target = useRef(null)
   const success =
     useSelector(state => state.auth.login.success) ||
@@ -32,12 +35,12 @@ const Header = () => {
     }, milliseconds)
   }, [changeTime])
   useEffect(() => {
-    if (window.matchMedia("(max-width:650px)").matches) {
+    if (window.matchMedia("(max-width:750px)").matches) {
       setShow(false)
     }
   }, [])
   const changeOverflow = () => {
-    if (window.matchMedia("(max-width:650px)").matches) {
+    if (window.matchMedia("(max-width:750px)").matches) {
       setShow(!show)
     }
     if (show) {
@@ -49,7 +52,11 @@ const Header = () => {
   const logoutFromApp = () => {
     dispatch(logout())
   }
-
+  const changeLang = lang => {
+    setLanguage(lang)
+    localStorage.setItem("lang", lang)
+    i18n.changeLanguage(lang)
+  }
   return (
     <div className={"header"}>
       <img src={logo} alt='logo bike park' />
@@ -69,6 +76,32 @@ const Header = () => {
               </NavLink>
             ))}
           </div>
+          <div className='header_language'>
+            <div className='header_language_item'>
+              <input
+                onChange={e => changeLang(e.target.value)}
+                type='radio'
+                id='ru'
+                name='lang'
+                value='ru'
+                checked
+                checked={language == "ru"}
+              />
+              <label htmlFor='ru'>RU</label>
+            </div>
+            <div className='header_language_item'>
+              <input
+                onChange={e => changeLang(e.target.value)}
+                type='radio'
+                id='en'
+                name='lang'
+                value='en'
+                checked={language == "en"}
+              />
+              <label htmlFor='en'>EN</label>
+            </div>
+          </div>
+
           <OverlayTrigger
             target={target.current}
             show={showTooltip}
@@ -79,9 +112,11 @@ const Header = () => {
                   {success ? (
                     <div>
                       <NavLink onClick={() => setShowTooltip(false)} to='/lk'>
-                        Личный кабинет
+                        {t("header/nav/lk")}
                       </NavLink>
-                      <span onClick={logoutFromApp}>Выйти</span>
+                      <span onClick={logoutFromApp}>
+                        {t("header/nav/logout")}
+                      </span>
                     </div>
                   ) : (
                     <>
@@ -89,11 +124,11 @@ const Header = () => {
                         onClick={() => setShowTooltip(false)}
                         to='/auth/registr'
                       >
-                        Регистрация
+                        {t("header/nav_reg")}
                       </NavLink>
                       <br />
                       <NavLink onClick={() => setShowTooltip(false)} to='/auth'>
-                        Войти
+                        {t("header/nav_login")}
                       </NavLink>
                     </>
                   )}
@@ -113,14 +148,14 @@ const Header = () => {
             to={success ? "/lk" : "/auth"}
             className={"header__authLinks"}
           >
-            <span>Личный кабинет</span>
+            <span> {t("header/nav_lk")}</span>
           </NavLink>
           {success && (
             <div
               onClick={logoutFromApp}
               className='header_logout header__authLinks'
             >
-              Выйти
+              {t("header/nav_logout")}
             </div>
           )}
         </nav>

@@ -1,0 +1,16 @@
+{
+  "main/header_title": "Аренда велосипедов c доставкой",
+
+  "info/title": "Где кататься",
+  "info/subtitle": "Подзаголовок",
+
+  "header/nav_aboutus": "О нас",
+  "header/nav_rent": "Аренда",
+  "header/nav_delivery": "Доставка",
+  "header/nav_wheredrive": "Где кататься",
+  "header/nav_contacts": "Контакты",
+  "header/nav_lk": "Личный кабинет",
+  "header/nav_logout": "Выйти",
+  "header/nav_reg": "Регистрация",
+  "header/nav_login": "Войти"
+}

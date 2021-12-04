@@ -1,13 +1,15 @@
 import freeitem1 from "../../assets/images/rent_header_image1.png"
 import freeitem2 from "../../assets/images/rent_header_image2.png"
 import freeitem3 from "../../assets/images/rent_header_image3.png"
+import { useTranslation } from "react-i18next"
 
 export default function RentHeader() {
+  const { t, i18n } = useTranslation()
   return (
     <div className='rent_header delivery'>
       <div className='delivery_block rent_header_block'>
         <div className='delivery_title rent_header_title'>
-          Аренда велосипедов c доставкой
+          {t("main/header_title")}
         </div>
         <div className='rent_header_free'>
           <div className='rent_header_free_item'>
