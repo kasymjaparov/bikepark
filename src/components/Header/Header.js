@@ -112,10 +112,10 @@ const Header = () => {
                   {success ? (
                     <div>
                       <NavLink onClick={() => setShowTooltip(false)} to='/lk'>
-                        {t("header/nav/lk")}
+                        {t("header/nav_lk")}
                       </NavLink>
                       <span onClick={logoutFromApp}>
-                        {t("header/nav/logout")}
+                        {t("header/nav_logout")}
                       </span>
                     </div>
                   ) : (
